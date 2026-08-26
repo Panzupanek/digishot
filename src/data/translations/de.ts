@@ -8,13 +8,13 @@ export const deTranslations: TranslationData = {
     "gallery": "Galerie",
     "specs": "Vergleich",
     "faq": "FAQ",
-    "orderNow": "Zum Drop-Waitlist",
+    "orderNow": "Waitlist Drop →",
     "cart": "Waitlist"
   },
   "announcement": {
-    "dropPrefix": "⚡ NÄCHSTER DROP STARTET IN:",
-    "dropSuffix": "| Vorherige Charge in 48h AUSVERKAUFT!",
-    "soldOutBadge": "AUSVERKAUFT"
+    "dropPrefix": "✦ DROP #1 STARTET IN 29 TAGEN — LIMITIERTE 100 STÜCK ✦",
+    "dropSuffix": "",
+    "soldOutBadge": ""
   },
   "hero": {
     "badge": "★ LIMITIERTER DROP #1 • NUR 100 STÜCK",

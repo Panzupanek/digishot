@@ -8,13 +8,13 @@ export const czTranslations: TranslationData = {
     "gallery": "Galerie fotek",
     "specs": "Srovnání",
     "faq": "Časté dotazy",
-    "orderNow": "Rezervovat v dropu",
+    "orderNow": "Waitlist Drop →",
     "cart": "Waitlist"
   },
   "announcement": {
-    "dropPrefix": "⚡ DALŠÍ DROP ZAČÍNÁ ZA:",
-    "dropSuffix": "| Předchozí série VYPRODÁNA za 48 hodin!",
-    "soldOutBadge": "VYPRODÁNO"
+    "dropPrefix": "✦ DROP #1 STARTUJE ZA 29 DNÍ — LIMITOVANÝCH 100 KS ✦",
+    "dropSuffix": "",
+    "soldOutBadge": ""
   },
   "hero": {
     "badge": "★ LIMITOVANÝ DROP #1 • POUZE 100 KUSŮ",
