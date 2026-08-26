@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #F8FAF7;
+    --color-surface: #FFFFFF;
+    --color-text: #121316;
+  }
+
+  .dark {
+    --color-bg: #090A0E;
+    --color-surface: #111318;
+    --color-text: #F1F5F9;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #A2B997;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8FA885;
+  }
+}
+
+/* Y2K Grain Overlay */
+.grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Glow utilities */
+.glow-sage {
+  text-shadow: 0 0 12px rgba(162, 185, 151, 0.6), 0 0 24px rgba(162, 185, 151, 0.3);
+}
+
+.glow-pink {
+  text-shadow: 0 0 12px rgba(255, 112, 166, 0.6), 0 0 24px rgba(255, 112, 166, 0.3);
+}
+
+.glow-cyan {
+  text-shadow: 0 0 12px rgba(112, 238, 255, 0.6), 0 0 24px rgba(112, 238, 255, 0.3);
+}
+
+.font-digital {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: -0.05em;
+}
+
+/* Flash animation */
+@keyframes camera-flash {
+  0% { opacity: 0; }
+  10% { opacity: 0.95; }
+  25% { opacity: 0.7; }
+  100% { opacity: 0; }
+}
+
+.animate-camera-flash {
+  animation: camera-flash 0.6s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
