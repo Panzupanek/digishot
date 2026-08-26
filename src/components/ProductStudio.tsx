@@ -2,7 +2,7 @@ import React from "react";
 import { useShop } from "../context/ShopContext";
 import { PRODUCT_VARIANTS } from "../data/products";
 import { CameraModel } from "./CameraModel";
-import { Check, Zap, Sparkles, Package, Bell, EyeOff, RefreshCw, AlertCircle, Clock } from "lucide-react";
+import { Check, Zap, Sparkles, Package, Bell, EyeOff, RefreshCw } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const ProductStudio: React.FC = () => {
@@ -45,18 +45,8 @@ export const ProductStudio: React.FC = () => {
 
         {/* 2-Column Product Studio Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Column: Interactive 3D/Visual Camera Studio */}
+          {/* Left Column: Interactive Visual Camera Studio */}
           <div className="lg:col-span-6 flex flex-col items-center justify-center p-6 sm:p-8 rounded-3xl bg-slate-50 dark:bg-[#12141C] border border-black/10 dark:border-white/10 shadow-xl dark:shadow-2xl relative overflow-hidden transition-colors">
-            {/* Top tag */}
-            <div className="w-full flex items-center justify-between mb-4 z-10">
-              <span className="text-xs font-mono font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-                DROP #1 PREVIEW
-              </span>
-              <span className="px-2.5 py-1 rounded-full text-[11px] font-mono font-bold bg-rose-500/15 text-rose-600 dark:text-rose-300 border border-rose-500/30">
-                {t.variants.stockBadge}
-              </span>
-            </div>
-
             {/* Camera Model */}
             <div className="w-full py-4">
               <CameraModel
@@ -98,16 +88,7 @@ export const ProductStudio: React.FC = () => {
               </p>
             </div>
 
-            {/* Sold out alert banner */}
-            <div className="p-3.5 rounded-2xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-between text-xs font-mono">
-              <div className="flex items-center space-x-2 text-rose-600 dark:text-rose-300">
-                <AlertCircle className="w-4 h-4 text-rose-500 flex-shrink-0" />
-                <span className="font-bold">{t.variants.soldOutStatus}</span>
-              </div>
-              <span className="text-slate-500 dark:text-slate-400 hidden sm:inline">{t.variants.nextDropNotice}</span>
-            </div>
-
-            {/* Color Option Cards */}
+            {/* Color Option Cards (Clean, without micro-label clutter) */}
             <div className="space-y-3 pt-2">
               <span className="text-xs font-mono font-bold tracking-wider text-slate-500 dark:text-slate-400 uppercase block">
                 {t.variants.selectColor}
@@ -141,9 +122,6 @@ export const ProductStudio: React.FC = () => {
                       </div>
                       <span className="text-xs font-bold font-sans text-slate-900 dark:text-white block truncate">
                         {t.variants[variant.nameKey]}
-                      </span>
-                      <span className="text-[10px] font-mono text-rose-500 dark:text-rose-400 font-bold mt-0.5">
-                        0/100 left
                       </span>
                     </motion.button>
                   );
@@ -207,7 +185,7 @@ export const ProductStudio: React.FC = () => {
             </div>
 
             {/* CTA Pre-order Action */}
-            <div className="pt-2 space-y-3">
+            <div className="pt-2">
               <button
                 onClick={() => openCheckout(selectedVariant)}
                 className="w-full py-4 rounded-2xl bg-gradient-to-r from-[#A2B997] via-[#8FA885] to-[#FF70A6] text-black font-black text-sm sm:text-base shadow-md dark:shadow-neon-sage hover:brightness-110 active:scale-95 transition-all flex items-center justify-center space-x-3 cursor-pointer"
@@ -215,17 +193,6 @@ export const ProductStudio: React.FC = () => {
                 <Bell className="w-5 h-5 text-black" />
                 <span>{t.variants.reserveBtn}</span>
               </button>
-
-              <div className="flex items-center justify-between text-xs font-mono text-slate-500 dark:text-slate-400 px-2">
-                <span className="flex items-center space-x-1 text-rose-500 dark:text-rose-400 font-semibold">
-                  <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse inline-block" />
-                  <span>0/100 In Stock</span>
-                </span>
-                <span className="flex items-center space-x-1 text-[#7B9370] dark:text-[#A2B997]">
-                  <Clock className="w-3.5 h-3.5" />
-                  <span>Next Drop in 30 Days</span>
-                </span>
-              </div>
             </div>
           </div>
         </div>
