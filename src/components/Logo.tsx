@@ -14,10 +14,10 @@ export const DigiShotLogo: React.FC<LogoProps> = ({
   wordmarkClassName = "",
 }) => {
   const iconDimensions = {
-    sm: "w-7 h-7",
-    md: "w-9 h-9",
-    lg: "w-12 h-12",
-    xl: "w-16 h-16",
+    sm: "w-6 h-6",
+    md: "w-8 h-8",
+    lg: "w-10 h-10",
+    xl: "w-14 h-14",
   };
 
   const textSizes = {
@@ -28,91 +28,72 @@ export const DigiShotLogo: React.FC<LogoProps> = ({
   };
 
   return (
-    <div className={`flex items-center space-x-3 select-none text-[#121316] dark:text-white ${className}`}>
-      {/* Exact Vector Brand Icon */}
-      <div className={`relative flex items-center justify-center ${iconDimensions[size]} flex-shrink-0`}>
-        <svg
-          viewBox="0 0 110 115"
+    <div className={`flex items-center gap-3 select-none text-[#121316] dark:text-white ${className}`}>
+      {/* Exact DigiShot Camera Vector Icon */}
+      <svg
+        className={`${iconDimensions[size]} text-current flex-shrink-0`}
+        viewBox="0 0 100 100"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {/* Outer Square Body */}
+        <rect
+          x="18"
+          y="10"
+          width="64"
+          height="64"
+          rx="4"
+          stroke="currentColor"
+          strokeWidth="6"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full overflow-visible"
-        >
-          {/* Mask to create clean transparent reflection cutouts on any background */}
-          <mask id="lens-reflection-mask">
-            <rect width="110" height="115" fill="white" />
-            {/* Top-Left Reflection Arc Cutout */}
-            <path
-              d="M 39 44 A 14 14 0 0 1 47 37"
-              fill="none"
-              stroke="black"
-              strokeWidth="3.2"
-              strokeLinecap="round"
-            />
-            {/* Bottom-Right Reflection Arc Cutout */}
-            <path
-              d="M 57 61 A 14 14 0 0 1 63 54"
-              fill="none"
-              stroke="black"
-              strokeWidth="3.2"
-              strokeLinecap="round"
-            />
-          </mask>
+        />
 
-          {/* 1. Square Outer Box */}
-          <rect
-            x="8"
-            y="8"
-            width="84"
-            height="84"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="7.5"
-            strokeLinejoin="miter"
-          />
+        {/* Outer Lens Ring */}
+        <circle
+          cx="50"
+          cy="42"
+          r="22"
+          stroke="currentColor"
+          strokeWidth="6"
+          fill="none"
+        />
 
-          {/* 2. Horizontal Baseline Underneath the Box */}
-          <line
-            x1="22"
-            y1="104"
-            x2="78"
-            y2="104"
-            stroke="currentColor"
-            strokeWidth="7.5"
-            strokeLinecap="round"
-          />
+        {/* Inner Lens Fill */}
+        <circle
+          cx="50"
+          cy="42"
+          r="14"
+          fill="currentColor"
+        />
 
-          {/* 3. Outer Circular Lens Ring */}
-          <circle
-            cx="50"
-            cy="50"
-            r="28.5"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="7"
-          />
+        {/* Lens Reflection Crescent */}
+        <path
+          d="M42 34 C42 34, 46 30, 52 30 C56 30, 58 32, 58 32 C55 35, 48 37, 42 34 Z"
+          fill="#ffffff"
+        />
 
-          {/* 4. Inner Lens Core with Reflection Cutouts */}
-          <circle
-            cx="50"
-            cy="50"
-            r="18.5"
-            fill="currentColor"
-            mask="url(#lens-reflection-mask)"
-          />
+        {/* 4-Pointed Flash Sparkle Star (Bottom-Right of Lens) */}
+        <path
+          d="M66 54 Q66 46 60 46 Q66 46 66 38 Q66 46 72 46 Q66 46 66 54 Z"
+          fill="currentColor"
+        />
 
-          {/* 5. 4-Pointed Flash Sparkle Star (✦) overlapping bottom-right of lens ring */}
-          <path
-            d="M 68 53 Q 68 64 57 64 Q 68 64 68 75 Q 68 64 79 64 Q 68 64 68 53 Z"
-            fill="currentColor"
-          />
-        </svg>
-      </div>
+        {/* Short Baseline Underneath (Slightly shorter than the square body) */}
+        <line
+          x1="28"
+          y1="84"
+          x2="72"
+          y2="84"
+          stroke="currentColor"
+          strokeWidth="6"
+          strokeLinecap="round"
+        />
+      </svg>
 
-      {/* Wordmark "DigiShot" */}
+      {/* Brand Wordmark */}
       {showWordmark && (
         <span
-          className={`${textSizes[size]} font-black tracking-[-0.02em] font-sans text-[#121316] dark:text-white leading-none ${wordmarkClassName}`}
-          style={{ letterSpacing: "-0.025em" }}
+          className={`${textSizes[size]} font-black tracking-tight text-current ${wordmarkClassName}`}
         >
           DigiShot
         </span>
