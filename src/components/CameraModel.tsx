@@ -102,17 +102,9 @@ export const CameraModel: React.FC<CameraModelProps> = ({
           {/* Top Bevel Highlight Line */}
           <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/30 to-transparent" />
 
-          {/* Top-Left: DigiShot Official Logo & Star */}
-          <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 border border-white rounded-[3px] flex items-center justify-center relative">
-              <div className="w-2 h-2 rounded-full border border-white" />
-              <span className="absolute -bottom-0.5 -right-0.5 text-[8px] text-[#A2B997] font-black leading-none">
-                ✦
-              </span>
-            </div>
-            <span className="text-sm font-black font-sans tracking-tight text-white">
-              DigiShot
-            </span>
+          {/* Top-Left: DigiShot Official Logo & Wordmark */}
+          <div className="flex items-center">
+            <DigiShotLogo size="sm" showWordmark={true} className="text-white scale-75 origin-left" />
           </div>
 
           {/* Top-Center & Top-Right Elements Group */}
