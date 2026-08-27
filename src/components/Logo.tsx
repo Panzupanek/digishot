@@ -14,9 +14,9 @@ export const DigiShotLogo: React.FC<LogoProps> = ({
   wordmarkClassName = "",
 }) => {
   const iconDimensions = {
-    sm: "w-6 h-6",
-    md: "w-8 h-8",
-    lg: "w-10 h-10",
+    sm: "w-7 h-7",
+    md: "w-9 h-9",
+    lg: "w-11 h-11",
     xl: "w-14 h-14",
   };
 
@@ -29,68 +29,67 @@ export const DigiShotLogo: React.FC<LogoProps> = ({
 
   return (
     <div className={`flex items-center gap-3 select-none text-[#121316] dark:text-white ${className}`}>
-      {/* Exact DigiShot Camera Vector Icon */}
+      {/* DigiShot Official Camera Brand Icon */}
       <svg
         className={`${iconDimensions[size]} text-current flex-shrink-0`}
         viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Outer Square Body */}
+        {/* 1. Outer Square Frame (Crisp, non-curved or very subtle rx=2) */}
         <rect
-          x="18"
-          y="10"
-          width="64"
-          height="64"
-          rx="4"
+          x="14"
+          y="8"
+          width="72"
+          height="72"
           stroke="currentColor"
-          strokeWidth="6"
+          strokeWidth="7"
           fill="none"
         />
 
-        {/* Outer Lens Ring */}
+        {/* 2. Large Circular Lens Outer Ring */}
         <circle
           cx="50"
-          cy="42"
-          r="22"
+          cy="44"
+          r="23"
           stroke="currentColor"
-          strokeWidth="6"
+          strokeWidth="7"
           fill="none"
         />
 
-        {/* Inner Lens Fill */}
+        {/* 3. Inner Lens Core Fill */}
         <circle
           cx="50"
-          cy="42"
+          cy="44"
           r="14"
           fill="currentColor"
         />
 
-        {/* Lens Reflection Crescent */}
+        {/* 4. Lens Crescent Reflection (Top-Left) */}
         <path
-          d="M42 34 C42 34, 46 30, 52 30 C56 30, 58 32, 58 32 C55 35, 48 37, 42 34 Z"
+          d="M41 35 C41 35, 45 31, 51 31 C56 31, 58 33, 58 33 C55 36, 47 38, 41 35 Z"
           fill="#ffffff"
         />
 
-        {/* 4-Pointed Flash Sparkle Star (Bottom-Right of Lens) */}
+        {/* 5. Sharp 4-Pointed Flash Star (Bottom-Right of the lens ring) */}
         <path
-          d="M66 54 Q66 46 60 46 Q66 46 66 38 Q66 46 72 46 Q66 46 66 54 Z"
+          d="M67 56 Q67 48 61 48 Q67 48 67 40 Q67 48 73 48 Q67 48 67 56 Z"
           fill="currentColor"
         />
 
-        {/* Short Baseline Underneath (Slightly shorter than the square body) */}
+        {/* 6. Short Baseline Underneath (Distinctly SHORTER than the square width) */}
         <line
           x1="28"
-          y1="84"
+          y1="90"
           x2="72"
-          y2="84"
+          y2="90"
           stroke="currentColor"
-          strokeWidth="6"
+          strokeWidth="7"
           strokeLinecap="round"
         />
       </svg>
 
-      {/* Brand Wordmark */}
+      {/* DigiShot Wordmark */}
       {showWordmark && (
         <span
           className={`${textSizes[size]} font-black tracking-tight text-current ${wordmarkClassName}`}
