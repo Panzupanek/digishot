@@ -20,14 +20,14 @@ export const Header: React.FC = () => {
 
       {/* 2. FLOATING MINIMALIST HEADER */}
       <header className="sticky top-0 z-40 bg-white/80 dark:bg-[#0B0B0C]/80 backdrop-blur-md border-b border-black/5 dark:border-white/10 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 min-h-[90px] flex items-center justify-between">
           {/* Left: Official DigiShot Logo */}
-          <a href="/" className="flex items-center flex-shrink-0 no-underline select-none">
+          <a href="/" className="flex items-center no-underline select-none flex-shrink-0 py-1">
             <img 
               src="logo.png" 
               alt="DigiShot" 
-              className="h-14 md:h-16 w-auto object-contain flex-shrink-0" 
-              style={{ height: "56px", maxHeight: "56px", width: "auto" }} 
+              className="w-auto object-contain flex-shrink-0 transition-transform" 
+              style={{ height: "80px", maxHeight: "80px", width: "auto" }} 
             />
           </a>
 

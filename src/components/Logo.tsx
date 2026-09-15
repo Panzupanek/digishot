@@ -10,12 +10,12 @@ export const DigiShotLogo: React.FC<LogoProps> = ({
   className = "",
 }) => {
   return (
-    <a href="/" className={`flex items-center flex-shrink-0 no-underline select-none ${className}`}>
+    <a href="/" className={`flex items-center no-underline select-none flex-shrink-0 py-1 ${className}`}>
       <img
         src="logo.png"
         alt="DigiShot"
-        className="h-14 md:h-16 w-auto object-contain flex-shrink-0"
-        style={{ height: "56px", maxHeight: "56px", width: "auto" }}
+        className="w-auto object-contain flex-shrink-0 transition-transform"
+        style={{ height: "80px", maxHeight: "80px", width: "auto" }}
       />
     </a>
   );
