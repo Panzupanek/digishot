@@ -2,68 +2,84 @@ import React from "react";
 
 interface LogoProps {
   size?: "sm" | "md" | "lg" | "xl";
-  showWordmark?: boolean;
   className?: string;
-  wordmarkClassName?: string;
 }
 
 export const DigiShotLogo: React.FC<LogoProps> = ({
   size = "md",
-  showWordmark = true,
   className = "",
-  wordmarkClassName = "",
 }) => {
-  const iconDimensions = {
-    sm: "w-6 h-6",
-    md: "w-8 h-8",
-    lg: "w-10 h-10",
-    xl: "w-14 h-14",
-  };
-
-  const textSizes = {
-    sm: "text-lg",
-    md: "text-2xl",
-    lg: "text-3xl",
-    xl: "text-4xl",
+  const heightClasses = {
+    sm: "h-8",
+    md: "h-10",
+    lg: "h-12",
+    xl: "h-14",
   };
 
   return (
-    <a href="#" className={`flex items-center gap-3 text-slate-900 dark:text-white no-underline group select-none ${className}`}>
-      {/* DigiShot Minimalist Lens & Flash Icon */}
+    <a href="#" className={`flex items-center gap-4 text-slate-900 dark:text-white no-underline select-none ${className}`}>
+      {/* Exact DigiShot Logo Graphic */}
       <svg
-        className={`${iconDimensions[size]} flex-shrink-0 text-current`}
-        viewBox="0 0 100 100"
+        className={`${heightClasses[size]} w-auto flex-shrink-0 text-current`}
+        viewBox="0 0 320 90"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Vnější prstenec objektivu */}
-        <circle cx="46" cy="52" r="32" stroke="currentColor" strokeWidth="6" />
-        
-        {/* Vnitřní prstenec optiky */}
-        <circle cx="46" cy="52" r="19" stroke="currentColor" strokeWidth="5" />
-        
-        {/* Středové jádro */}
-        <circle cx="46" cy="52" r="9" fill="currentColor" />
-        
-        {/* Jemný půlměsíční odlesk */}
-        <path
-          d="M36 40 C36 40, 41 36, 48 36 C54 36, 57 39, 57 39 C53 43, 44 45, 36 40 Z"
+        {/* 1. Rounded Square Body (Squircle) */}
+        <rect
+          x="6"
+          y="6"
+          width="78"
+          height="78"
+          rx="18"
+          stroke="currentColor"
+          strokeWidth="7"
+          fill="none"
+        />
+
+        {/* 2. Outer Lens Ring */}
+        <circle
+          cx="45"
+          cy="45"
+          r="23"
+          stroke="currentColor"
+          strokeWidth="6"
+          fill="none"
+        />
+
+        {/* 3. Inner Lens Core */}
+        <circle
+          cx="45"
+          cy="45"
+          r="14"
           fill="currentColor"
         />
-        
-        {/* 4cípá jiskra blesku v šalvějově zelené barvě (#A2B997) */}
-        <path
-          d="M78 30 Q78 18 68 18 Q78 18 78 6 Q78 18 88 18 Q78 18 78 30 Z"
-          fill="#A2B997"
-        />
-      </svg>
 
-      {/* Prémiový Wordmark DigiShot */}
-      {showWordmark && (
-        <span className={`${textSizes[size]} font-bold tracking-tight text-current ${wordmarkClassName}`}>
+        {/* 4. Top-Left Lens Crescent Reflection */}
+        <path
+          d="M37 36 C37 36, 41 32, 47 32 C51 32, 53 34, 53 34 C50 37, 43 38, 37 36 Z"
+          fill="#ffffff"
+        />
+
+        {/* 5. Sage Green 4-Pointed Flash Star (Bottom-Right) */}
+        <path
+          d="M68 62 Q68 51 58 51 Q68 51 68 40 Q68 51 78 51 Q68 51 68 62 Z"
+          fill="#98A886"
+        />
+
+        {/* 6. Exact DigiShot Wordmark */}
+        <text
+          x="100"
+          y="58"
+          fill="currentColor"
+          fontFamily="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+          fontSize="44"
+          fontWeight="700"
+          letterSpacing="-1"
+        >
           DigiShot
-        </span>
-      )}
+        </text>
+      </svg>
     </a>
   );
 };
