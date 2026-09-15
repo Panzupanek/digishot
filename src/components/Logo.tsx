@@ -3,7 +3,6 @@ import React from "react";
 interface LogoProps {
   size?: "sm" | "md" | "lg" | "xl";
   className?: string;
-  showWordmark?: boolean;
 }
 
 export const DigiShotLogo: React.FC<LogoProps> = ({
@@ -18,11 +17,11 @@ export const DigiShotLogo: React.FC<LogoProps> = ({
   };
 
   return (
-    <a href="/" className={`flex items-center ${className}`}>
+    <a href="/" className={`flex items-center select-none no-underline ${className}`}>
       <img
         src="/logo.png"
         alt="DigiShot"
-        className={`${heightClasses[size]} w-auto object-contain rounded-lg select-none`}
+        className={`${heightClasses[size]} w-auto object-contain transition-transform hover:scale-105 active:scale-95`}
       />
     </a>
   );
