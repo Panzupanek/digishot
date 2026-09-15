@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Zap, Sparkles } from "lucide-react";
 import { PRODUCT_VARIANTS } from "../data/products";
+import { DigiShotLogo } from "./Logo";
 
 interface CameraModelProps {
   variantId: "sage" | "blush" | "classic";
