@@ -21,9 +21,9 @@ export const Header: React.FC = () => {
       {/* 2. FLOATING MINIMALIST HEADER */}
       <header className="sticky top-0 z-40 bg-white/80 dark:bg-[#0B0B0C]/80 backdrop-blur-md border-b border-black/5 dark:border-white/10 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          {/* Left: Official DigiShot Vector Logo */}
-          <a href="/" className="flex items-center space-x-2.5 group no-underline">
-            <DigiShotLogo size="md" className="group-hover:opacity-85 transition-opacity" />
+          {/* Left: Official DigiShot Logo */}
+          <a href="/" className="flex items-center">
+            <img src="logo.png" alt="DigiShot" className="h-9 w-auto object-contain" />
           </a>
 
           {/* Center: Clean Muted Sans-Serif Nav Links */}
