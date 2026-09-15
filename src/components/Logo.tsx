@@ -28,66 +28,37 @@ export const DigiShotLogo: React.FC<LogoProps> = ({
   };
 
   return (
-    <a href="#" className={`flex items-center gap-3 text-slate-900 dark:text-white no-underline select-none ${className}`}>
+    <a href="#" className={`flex items-center gap-3 text-slate-900 dark:text-white no-underline group select-none ${className}`}>
+      {/* DigiShot Minimalist Lens & Flash Icon */}
       <svg
         className={`${iconDimensions[size]} flex-shrink-0 text-current`}
         viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Square camera body */}
-        <rect
-          x="14"
-          y="10"
-          width="72"
-          height="66"
-          stroke="currentColor"
-          strokeWidth="7"
-          fill="none"
-        />
-
-        {/* Outer lens ring */}
-        <circle
-          cx="50"
-          cy="43"
-          r="21"
-          stroke="currentColor"
-          strokeWidth="7"
-          fill="none"
-        />
-
-        {/* Inner lens core */}
-        <circle
-          cx="50"
-          cy="43"
-          r="13"
-          fill="currentColor"
-        />
-
-        {/* Lens reflection (top-left) */}
+        {/* Vnější prstenec objektivu */}
+        <circle cx="46" cy="52" r="32" stroke="currentColor" strokeWidth="6" />
+        
+        {/* Vnitřní prstenec optiky */}
+        <circle cx="46" cy="52" r="19" stroke="currentColor" strokeWidth="5" />
+        
+        {/* Středové jádro */}
+        <circle cx="46" cy="52" r="9" fill="currentColor" />
+        
+        {/* Jemný půlměsíční odlesk */}
         <path
-          d="M42 34 C42 34, 46 30, 52 30 C56 30, 58 32, 58 32 C55 35, 48 37, 42 34 Z"
-          className="fill-white dark:fill-[#090A0E]"
+          d="M36 40 C36 40, 41 36, 48 36 C54 36, 57 39, 57 39 C53 43, 44 45, 36 40 Z"
           fill="currentColor"
         />
-
-        {/* Sharp 4-point star flash (bottom-right) */}
+        
+        {/* 4cípá jiskra blesku v šalvějově zelené barvě (#A2B997) */}
         <path
-          d="M68 56 Q68 47 60 47 Q68 47 68 38 Q68 47 76 47 Q68 47 68 56 Z"
-          fill="currentColor"
-        />
-
-        {/* Distinctly shorter bottom baseline centered underneath */}
-        <line
-          x1="30"
-          y1="88"
-          x2="70"
-          y2="88"
-          stroke="currentColor"
-          strokeWidth="7"
-          strokeLinecap="round"
+          d="M78 30 Q78 18 68 18 Q78 18 78 6 Q78 18 88 18 Q78 18 78 30 Z"
+          fill="#A2B997"
         />
       </svg>
+
+      {/* Prémiový Wordmark DigiShot */}
       {showWordmark && (
         <span className={`${textSizes[size]} font-bold tracking-tight text-current ${wordmarkClassName}`}>
           DigiShot
