@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Zap, Sparkles } from "lucide-react";
 import { PRODUCT_VARIANTS } from "../data/products";
-import { DigiShotLogo } from "./Logo";
 
 interface CameraModelProps {
   variantId: "sage" | "blush" | "classic";
@@ -103,9 +102,13 @@ export const CameraModel: React.FC<CameraModelProps> = ({
           {/* Top Bevel Highlight Line */}
           <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/30 to-transparent" />
 
-          {/* Top-Left: DigiShot Official Logo & Wordmark */}
+          {/* Top-Left: DigiShot Official Logo (Clean White Engraved Brand Mark) */}
           <div className="flex items-center">
-            <DigiShotLogo size="sm" showWordmark={true} className="text-white scale-75 origin-left" />
+            <img 
+              src="logo-white.png" 
+              alt="DigiShot" 
+              className="h-5 sm:h-6 w-auto object-contain flex-shrink-0 opacity-95 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] select-none pointer-events-none" 
+            />
           </div>
 
           {/* Top-Center & Top-Right Elements Group */}

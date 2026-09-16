@@ -21,12 +21,24 @@ export const Header: React.FC = () => {
       {/* 2. FLOATING MINIMALIST SLIM HEADER */}
       <header className="sticky top-0 z-50 w-full bg-white/85 dark:bg-[#0B0B0C]/85 backdrop-blur-md border-b border-gray-100/80 dark:border-white/10 transition-all">
         <div className="py-2.5 px-6 max-w-7xl mx-auto flex items-center justify-between overflow-visible">
-          {/* Left: Official DigiShot Logo */}
+          {/* Left: Official DigiShot Logo (Dynamic Light/Dark Mode) */}
           <a href="/" className="flex items-center no-underline select-none flex-shrink-0 relative overflow-visible">
             <img 
               src="logo.png" 
               alt="DigiShot" 
-              className="w-auto object-contain flex-shrink-0 block" 
+              className="w-auto object-contain flex-shrink-0 block dark:hidden" 
+              style={{ 
+                height: "56px", 
+                minHeight: "56px", 
+                transform: "scale(1.35)", 
+                transformOrigin: "left center", 
+                marginLeft: "4px" 
+              }} 
+            />
+            <img 
+              src="logo-white.png" 
+              alt="DigiShot" 
+              className="w-auto object-contain flex-shrink-0 hidden dark:block" 
               style={{ 
                 height: "56px", 
                 minHeight: "56px", 
