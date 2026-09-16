@@ -102,10 +102,10 @@ export const CameraModel: React.FC<CameraModelProps> = ({
           {/* Top Bevel Highlight Line */}
           <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/30 to-transparent" />
 
-          {/* Top-Left: DigiShot Official Logo (Clean White Engraved Brand Mark) */}
+          {/* Top-Left: DigiShot Official Logo (Clean White / Sage Green Engraved Brand Mark) */}
           <div className="flex items-center">
             <img 
-              src="logo-white.png" 
+              src="logo-dark.png" 
               alt="DigiShot" 
               className="h-5 sm:h-6 w-auto object-contain flex-shrink-0 opacity-95 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] select-none pointer-events-none" 
             />

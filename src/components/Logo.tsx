@@ -24,7 +24,7 @@ export const DigiShotLogo: React.FC<LogoProps> = ({
         }}
       />
       <img
-        src="logo-white.png"
+        src="logo-dark.png"
         alt="DigiShot"
         className="w-auto object-contain flex-shrink-0 hidden dark:block"
         style={{

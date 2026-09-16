@@ -23,6 +23,7 @@ export const Header: React.FC = () => {
         <div className="py-2.5 px-6 max-w-7xl mx-auto flex items-center justify-between overflow-visible">
           {/* Left: Official DigiShot Logo (Dynamic Light/Dark Mode) */}
           <a href="/" className="flex items-center no-underline select-none flex-shrink-0 relative overflow-visible">
+            {/* Light mode logo */}
             <img 
               src="logo.png" 
               alt="DigiShot" 
@@ -35,8 +36,9 @@ export const Header: React.FC = () => {
                 marginLeft: "4px" 
               }} 
             />
+            {/* Dark mode logo */}
             <img 
-              src="logo-white.png" 
+              src="logo-dark.png" 
               alt="DigiShot" 
               className="w-auto object-contain flex-shrink-0 hidden dark:block" 
               style={{ 
