@@ -14,8 +14,7 @@ export const DigiShotLogo: React.FC<LogoProps> = ({
       <img
         src="logo.png"
         alt="DigiShot"
-        className="w-auto object-contain flex-shrink-0 block"
-        style={{ height: "84px", maxHeight: "84px", minHeight: "84px", width: "auto" }}
+        className="h-10 md:h-11 w-auto object-contain flex-shrink-0 block"
       />
     </a>
   );

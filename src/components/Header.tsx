@@ -18,26 +18,25 @@ export const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* 2. FLOATING MINIMALIST HEADER */}
-      <header className="sticky top-0 z-40 bg-white/80 dark:bg-[#0B0B0C]/80 backdrop-blur-md border-b border-black/5 dark:border-white/10 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto py-5 px-6 min-h-[96px] flex items-center justify-between">
+      {/* 2. FLOATING MINIMALIST SLIM HEADER */}
+      <header className="sticky top-0 z-50 w-full bg-white/85 dark:bg-[#0B0B0C]/85 backdrop-blur-md border-b border-gray-100/80 dark:border-white/10 transition-all">
+        <div className="py-2.5 px-6 max-w-7xl mx-auto flex items-center justify-between">
           {/* Left: Official DigiShot Logo */}
           <a href="/" className="flex items-center no-underline select-none flex-shrink-0">
             <img 
               src="logo.png" 
               alt="DigiShot" 
-              className="w-auto object-contain flex-shrink-0 block" 
-              style={{ height: "84px", maxHeight: "84px", minHeight: "84px", width: "auto" }} 
+              className="h-10 md:h-11 w-auto object-contain flex-shrink-0 block" 
             />
           </a>
 
           {/* Center: Clean Muted Sans-Serif Nav Links */}
-          <nav className="hidden md:flex items-center space-x-8 text-xs font-medium text-slate-600 dark:text-slate-400">
-            <a href="#features" className="hover:text-slate-900 dark:hover:text-white transition-colors">{t.nav.features}</a>
-            <a href="#variants" className="hover:text-slate-900 dark:hover:text-white transition-colors">{t.nav.variants}</a>
-            <a href="#how-it-works" className="hover:text-slate-900 dark:hover:text-white transition-colors">{t.nav.howItWorks}</a>
-            <a href="#gallery" className="hover:text-slate-900 dark:hover:text-white transition-colors">{t.nav.gallery}</a>
-            <a href="#faq" className="hover:text-slate-900 dark:hover:text-white transition-colors">{t.nav.faq}</a>
+          <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600 dark:text-slate-400">
+            <a href="#features" className="hover:text-gray-900 dark:hover:text-white transition-colors">{t.nav.features}</a>
+            <a href="#variants" className="hover:text-gray-900 dark:hover:text-white transition-colors">{t.nav.variants}</a>
+            <a href="#how-it-works" className="hover:text-gray-900 dark:hover:text-white transition-colors">{t.nav.howItWorks}</a>
+            <a href="#gallery" className="hover:text-gray-900 dark:hover:text-white transition-colors">{t.nav.gallery}</a>
+            <a href="#faq" className="hover:text-gray-900 dark:hover:text-white transition-colors">{t.nav.faq}</a>
           </nav>
 
           {/* Right: Unified Compact Control Cluster */}
@@ -50,7 +49,7 @@ export const Header: React.FC = () => {
             {/* Main Elegant Compact CTA: "Waitlist Drop →" */}
             <button
               onClick={() => openCheckout()}
-              className="px-4 py-2 rounded-full bg-[#A2B997] hover:bg-[#92A987] text-black font-bold text-xs shadow-sm transition-all active:scale-95 cursor-pointer whitespace-nowrap"
+              className="py-1.5 px-3.5 rounded-full bg-[#A2B997] hover:bg-[#92A987] text-black font-bold text-xs md:text-sm shadow-sm transition-all active:scale-95 cursor-pointer whitespace-nowrap"
             >
               {t.nav.orderNow}
             </button>
