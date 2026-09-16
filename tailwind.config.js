@@ -26,8 +26,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["'Space Grotesk'", "system-ui", "-apple-system", "sans-serif"],
-        display: ["'Syne'", "'Space Grotesk'", "sans-serif"],
+        sans: ["'Plus Jakarta Sans'", "system-ui", "-apple-system", "sans-serif"],
+        display: ["'Plus Jakarta Sans'", "system-ui", "sans-serif"],
         mono: ["'JetBrains Mono'", "'Space Mono'", "monospace"],
       },
       boxShadow: {

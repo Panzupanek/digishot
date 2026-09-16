@@ -18,6 +18,7 @@ export const enTranslations: TranslationData = {
   },
   "hero": {
     "badge": "★ LIMITED DROP #1 • ONLY 100 PIECES",
+    "stockPill": "⚡ DROP #1: LIMITED EDITION 100 PCS — 84 LEFT",
     "urgencyTag": "🔥 PREVIOUS BATCH COMPLETELY SOLD OUT IN 48 HOURS",
     "dropDateTitle": "COUNTDOWN TO NEXT EXCLUSIVE DROP:",
     "title": "No screens. Pure party.",

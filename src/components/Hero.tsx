@@ -1,7 +1,6 @@
 import React from "react";
 import { useShop } from "../context/ShopContext";
 import { CameraModel } from "./CameraModel";
-import { CountdownTimer } from "./CountdownTimer";
 import { Zap, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -22,7 +21,7 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="text-4xl sm:text-6xl lg:text-7xl font-black font-sans tracking-tight text-slate-900 dark:text-white leading-[1.08]"
+              className="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-sans tracking-[-0.03em] text-[#0f172a] dark:text-white leading-[1.08]"
             >
               {t.hero.title}
             </motion.h1>
@@ -37,18 +36,14 @@ export const Hero: React.FC = () => {
               {t.hero.subtitle}
             </motion.p>
 
-            {/* Clean 30-Day Drop Countdown Pill */}
+            {/* Urgent Stock Pill */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.18 }}
-              className="inline-flex items-center space-x-3 px-4 py-2.5 rounded-full bg-white dark:bg-[#161820] border border-black/10 dark:border-white/10 shadow-sm backdrop-blur-md text-xs font-mono"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#A2B997]/15 dark:bg-[#A2B997]/20 border border-[#A2B997]/40 text-[#405338] dark:text-[#C4D8BC] text-xs font-mono font-bold tracking-wide shadow-sm backdrop-blur-md"
             >
-              <span className="text-[#5A734F] dark:text-[#A2B997] font-bold flex items-center gap-1.5">
-                <Zap className="w-3.5 h-3.5 fill-[#5A734F] dark:fill-[#A2B997]" />
-                <span>drop za:</span>
-              </span>
-              <CountdownTimer compact={true} />
+              <span>{t.hero.stockPill}</span>
             </motion.div>
 
             {/* CTA Buttons */}
@@ -60,7 +55,7 @@ export const Hero: React.FC = () => {
             >
               <button
                 onClick={() => openCheckout(selectedVariant)}
-                className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#A2B997] hover:bg-[#92A987] text-black font-black text-xs sm:text-sm tracking-wider shadow-sm transition-all active:scale-95 flex items-center justify-center space-x-2.5 uppercase cursor-pointer"
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#98A886] hover:bg-[#889876] text-black font-extrabold text-xs sm:text-sm tracking-wider shadow-sm transition-all active:scale-95 flex items-center justify-center space-x-2.5 uppercase cursor-pointer"
               >
                 <span>{t.hero.primaryCta}</span>
                 <ArrowRight className="w-4 h-4 text-black" />
@@ -68,9 +63,9 @@ export const Hero: React.FC = () => {
 
               <button
                 onClick={triggerFlash}
-                className="w-full sm:w-auto px-6 py-4 rounded-full bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-slate-800 dark:text-slate-200 font-bold text-xs font-mono border border-black/10 dark:border-white/10 transition-all flex items-center justify-center space-x-2 cursor-pointer"
+                className="w-full sm:w-auto px-5 py-3 rounded-full text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white font-medium text-xs font-mono hover:bg-black/5 dark:hover:bg-white/5 transition-all flex items-center justify-center space-x-1.5 cursor-pointer"
               >
-                <Zap className="w-4 h-4 text-[#5A734F] dark:text-[#A2B997]" />
+                <Zap className="w-3.5 h-3.5 text-[#5A734F] dark:text-[#A2B997]" />
                 <span>{t.hero.flashBtn}</span>
               </button>
             </motion.div>

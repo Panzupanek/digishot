@@ -18,6 +18,7 @@ export const czTranslations: TranslationData = {
   },
   "hero": {
     "badge": "★ LIMITOVANÝ DROP #1 • POUZE 100 KUSŮ",
+    "stockPill": "⚡ DROP #1: LIMITOVANÁ EDICE 100 KS — ZBÝVÁ 84 KS",
     "urgencyTag": "🔥 PŘEDCHOZÍ BATCH VYPRODÁN BĚHEM 48 HODIN",
     "dropDateTitle": "ODPOČET DO SPOUŠTĚNÍ DALŠÍHO DROPU:",
     "title": "Žádný displej. Čistá párty.",

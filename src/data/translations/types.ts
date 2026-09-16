@@ -19,6 +19,7 @@ export interface TranslationData {
   };
   hero: {
     badge: string;
+    stockPill: string;
     urgencyTag: string;
     dropDateTitle: string;
     title: string;

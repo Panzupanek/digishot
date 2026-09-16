@@ -18,6 +18,7 @@ export const deTranslations: TranslationData = {
   },
   "hero": {
     "badge": "★ LIMITIERTER DROP #1 • NUR 100 STÜCK",
+    "stockPill": "⚡ DROP #1: LIMITIERTE EDITION 100 STK — 84 ÜBRIG",
     "urgencyTag": "🔥 LETZTE BATCH INNERHALB VON 48 STUNDEN RESTLOS AUSVERKAUFT",
     "dropDateTitle": "COUNTDOWN ZUM NÄCHSTEN EXKLUSIVEN DROP:",
     "title": "Kein Display. Pure Party.",
