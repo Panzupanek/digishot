@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { translations, Language, Currency, TranslationData } from "../data/translations";
-import { PRODUCT_VARIANTS, ADD_ONS } from "../data/products";
+import { PRODUCT_VARIANTS, ADD_ONS, CameraVariantId } from "../data/products";
 import { cameraSound } from "../lib/sound";
 
 export type Theme = "dark" | "light";
@@ -14,12 +14,12 @@ interface ShopContextType {
   toggleTheme: () => void;
   t: TranslationData;
   formatPrice: (czk: number, eur: number) => string;
-  selectedVariant: "sage" | "blush" | "classic";
-  setSelectedVariant: (v: "sage" | "blush" | "classic") => void;
+  selectedVariant: CameraVariantId;
+  setSelectedVariant: (v: CameraVariantId) => void;
   selectedAddOns: string[];
   toggleAddOn: (id: string) => void;
   isCheckoutOpen: boolean;
-  openCheckout: (variant?: "sage" | "blush" | "classic") => void;
+  openCheckout: (variant?: CameraVariantId) => void;
   closeCheckout: () => void;
   isFlashActive: boolean;
   triggerFlash: () => void;
@@ -32,7 +32,7 @@ const ShopContext = createContext<ShopContextType | undefined>(undefined);
 export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [lang, setLangState] = useState<Language>("cz");
   const [currency, setCurrencyState] = useState<Currency>("CZK");
-  const [selectedVariant, setSelectedVariant] = useState<"sage" | "blush" | "classic">("sage");
+  const [selectedVariant, setSelectedVariant] = useState<CameraVariantId>("sage");
   const [selectedAddOns, setSelectedAddOns] = useState<string[]>(["strap"]);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState<boolean>(false);
   const [isFlashActive, setIsFlashActive] = useState<boolean>(false);

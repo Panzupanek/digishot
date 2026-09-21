@@ -1,6 +1,7 @@
 import React from "react";
 import { useShop } from "../context/ShopContext";
 import { CameraModel } from "./CameraModel";
+import { CAMERA_COLOR_OPTIONS } from "../data/products";
 import { Zap, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -71,47 +72,42 @@ export const Hero: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Right Column: Interactive Camera Showcase */}
+          {/* Right Column: Interactive Camera Showcase with 8-Color Switcher */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center">
-            {/* Minimal Color Swatches */}
-            <div className="flex items-center space-x-2 mb-4 p-1.5 rounded-2xl bg-white/80 dark:bg-black/60 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-sm">
-              <button
-                onClick={() => setSelectedVariant("sage")}
-                className={`px-3 py-1.5 rounded-xl text-xs font-mono transition-all flex items-center space-x-1.5 cursor-pointer ${
-                  selectedVariant === "sage"
-                    ? "bg-[#A2B997]/30 text-[#5A734F] dark:text-[#C4D8BC] border border-[#7B9370]/50 dark:border-[#A2B997]/50 font-bold shadow-sm"
-                    : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
-                }`}
-              >
-                <span className="w-2.5 h-2.5 rounded-full bg-[#A2B997] inline-block" />
-                <span>Sage Green</span>
-              </button>
-              <button
-                onClick={() => setSelectedVariant("blush")}
-                className={`px-3 py-1.5 rounded-xl text-xs font-mono transition-all flex items-center space-x-1.5 cursor-pointer ${
-                  selectedVariant === "blush"
-                    ? "bg-pink-500/20 text-pink-700 dark:text-pink-300 border border-pink-500/40 font-bold shadow-sm"
-                    : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
-                }`}
-              >
-                <span className="w-2.5 h-2.5 rounded-full bg-[#FF70A6] inline-block" />
-                <span>Blush</span>
-              </button>
-              <button
-                onClick={() => setSelectedVariant("classic")}
-                className={`px-3 py-1.5 rounded-xl text-xs font-mono transition-all flex items-center space-x-1.5 cursor-pointer ${
-                  selectedVariant === "classic"
-                    ? "bg-amber-600/20 text-amber-800 dark:text-amber-300 border border-amber-500/40 font-bold shadow-sm"
-                    : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
-                }`}
-              >
-                <span className="w-2.5 h-2.5 rounded-full bg-[#8D4F28] inline-block" />
-                <span>Classic</span>
-              </button>
+            {/* 8-Color Interactive Product Switcher Pills */}
+            <div className="w-full max-w-lg mb-4">
+              <div className="flex flex-wrap items-center justify-center gap-1.5 p-2 rounded-2xl bg-white/80 dark:bg-black/60 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-sm">
+                {CAMERA_COLOR_OPTIONS.map((option) => {
+                  const isSelected =
+                    selectedVariant === option.id ||
+                    (selectedVariant === "green" && option.id === "sage") ||
+                    (selectedVariant === "pink" && option.id === "blush") ||
+                    (selectedVariant === "classic" && option.id === "brown");
+
+                  return (
+                    <button
+                      key={option.id}
+                      onClick={() => setSelectedVariant(option.id)}
+                      className={`px-3 py-1.5 rounded-xl text-xs font-mono transition-all flex items-center space-x-1.5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#98A886]/60 ${
+                        isSelected
+                          ? `${option.bgActive} border-2 ${option.borderActive} font-bold shadow-sm scale-105`
+                          : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 border border-transparent"
+                      }`}
+                      title={`Select ${option.name}`}
+                    >
+                      <span
+                        className="w-2.5 h-2.5 rounded-full inline-block flex-shrink-0 shadow-sm border border-black/10 dark:border-white/20"
+                        style={{ backgroundColor: option.colorDot }}
+                      />
+                      <span className="whitespace-nowrap">{option.name}</span>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
 
             {/* Interactive Camera Component */}
-            <div className="w-full">
+            <div className="w-full flex items-center justify-center">
               <CameraModel
                 variantId={selectedVariant}
                 interactive={true}
