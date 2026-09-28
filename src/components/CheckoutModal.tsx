@@ -198,7 +198,7 @@ export const CheckoutModal: React.FC = () => {
                   <span className="text-xs font-mono font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider block">
                     {t.waitlist.selectVariantTitle}
                   </span>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
                     {PRODUCT_VARIANTS.map((v) => {
                       const active = selectedVariant === v.id;
                       const name = (v.nameKey && (t.variants as any)[v.nameKey]) || v.name;
@@ -209,7 +209,7 @@ export const CheckoutModal: React.FC = () => {
                           onClick={() => setSelectedVariant(v.id)}
                           className={`p-2.5 rounded-xl border text-xs text-left transition-all cursor-pointer ${
                             active
-                              ? "bg-[#A2B997]/25 border-[#7B9370] dark:border-[#A2B997] text-slate-900 dark:text-white font-bold shadow-sm"
+                              ? "bg-pink-500/20 border-pink-500 dark:border-pink-400 text-slate-900 dark:text-white font-bold shadow-sm"
                               : "bg-white dark:bg-white/5 border-black/10 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                           }`}
                         >

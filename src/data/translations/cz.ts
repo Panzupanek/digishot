@@ -33,7 +33,7 @@ export const czTranslations: TranslationData = {
     "soldOutNotice": "Všechny skladové zásoby jsou momentálně rozebrány. Rezervuj si přednostní přístup k limitované sérii 100 kusů."
   },
   "variants": {
-    "sectionTag": "8 IKONICKÝCH EDIC",
+    "sectionTag": "5 IKONICKÝCH EDIC",
     "heading": "Vyber si barvu pro nadcházející drop",
     "subheading": "Všechny varianty sdílejí legendární retro CCD senzor s drsným bleskem a okamžitým USB-C propojením s mobilem.",
     "selectColor": "Zvolit barvu:",
@@ -50,22 +50,16 @@ export const czTranslations: TranslationData = {
       "Balíček holografických retro samolepek",
       "Rychlý návod v češtině & 2letá záruka"
     ],
-    "sageName": "DigiShot Sage",
-    "sageDesc": "Šalvějově zelená & smetanový krém. Vlajková loď kolekce! Jemná Y2K matcha estetika, která perfektně doplní tvůj festivalový fit.",
     "blushName": "DigiShot Blush",
-    "blushDesc": "Pastelově růžová & vanilkový krém. Hit TikToku, perfektní k party outfitu a festivalovému třpytkovému líčení.",
+    "blushDesc": "Pastelově růžová & vanilkový krém. Vlajková loď a hit TikToku, perfektní k party outfitu a festivalovému třpytkovému líčení.",
+    "whiteName": "DigiShot Retro White",
+    "whiteDesc": "Čistá křídově bílá evokující ikonické foťáky počátku milénia. Minimalismus v ryzí retro podobě.",
+    "classicName": "DigiShot Classic",
+    "classicDesc": "Koňaková kůže & terakota. Nadčasová vintage estetika pro elegantní noční akce a stylové večírky.",
     "purpleName": "DigiShot Purple",
     "purpleDesc": "Sytě fialový odstín s noční klubovou aurou. Navrženo pro noční ravy, neonová světla a festivalový vibe.",
     "blackName": "DigiShot Noir",
-    "blackDesc": "Matná černá & minimalistický industriální styl. Diskrétní společník na divoké klubové afterparty.",
-    "blueName": "DigiShot Ocean",
-    "blueDesc": "Svěží azurově modrá inspirovaná letními festivaly, otevřeným nebem a mořským pobřežím.",
-    "classicName": "DigiShot Classic",
-    "classicDesc": "Koňaková kůže & terakota. Nadčasová vintage estetika pro elegantní noční akce a stylové večírky.",
-    "redName": "DigiShot Crimson",
-    "redDesc": "Výrazná karmínově červená plná energie a vášně. Okamžitě upoutá pozornost na každém tanečním parketu.",
-    "whiteName": "DigiShot Retro White",
-    "whiteDesc": "Čistá křídově bílá evokující ikonické foťáky počátku milénia. Minimalismus v ryzí retro podobě."
+    "blackDesc": "Matná černá & minimalistický industriální styl. Diskrétní společník na divoké klubové afterparty."
   },
   "specs": {
     "sectionTag": "PROČ DIGISHOT MĚNÍ PRAVIDLA HRY",
@@ -178,8 +172,8 @@ export const czTranslations: TranslationData = {
         "handle": "@eliska_fest",
         "age": "21 let",
         "location": "Let It Roll & Praha",
-        "quote": "Vzala jsem edici Sage Green na festival a všichni se mě ptali, odkud ten foťák mám! Ráno jsme u stanu propojily kabel s mobilem a smály se až do oběda. Nejlepší nákup léta.",
-        "variantBought": "DigiShot Sage"
+        "quote": "Vzala jsem edici DigiShot Blush na festival a všichni se mě ptali, odkud ten foťák mám! Ráno jsme u stanu propojily kabel s mobilem a smály se až do oběda. Nejlepší nákup léta.",
+        "variantBought": "DigiShot Blush"
       },
       {
         "name": "Marek V.",
@@ -237,7 +231,7 @@ export const czTranslations: TranslationData = {
     "perksTitle": "Výhody pro členy VIP Waitlistu:",
     "perk1": "2 hodiny přednostní přístup k nákupu před veřejným spuštěním",
     "perk2": "Garantovaný slevový kód na 20% slevu (kód DROP20)",
-    "perk3": "Rezervace vybrané barvy (8 ikonických edic)",
+    "perk3": "Rezervace vybrané barvy (5 ikonických edic)",
     "successTitle": "Místo na VIP Waitlistu je tvoje! 🎉",
     "successSubtitle": "Skvělé! Úspěšně jsme tě zařadili na seznam přednostních nákupčích pro Drop #1.",
     "vipNumberLabel": "Tvé VIP pořadové číslo:",

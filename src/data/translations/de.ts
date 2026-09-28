@@ -33,7 +33,7 @@ export const deTranslations: TranslationData = {
     "soldOutNotice": "Aktuell alle Bestände ausverkauft. Sichere dir bevorzugten Vorabzugang zur limitierten 100-Stück-Serie."
   },
   "variants": {
-    "sectionTag": "8 KULTIGE EDITIONEN",
+    "sectionTag": "5 KULTIGE EDITIONEN",
     "heading": "Wähle deine Farbe für den nächsten Drop",
     "subheading": "Jede Farbvariante besitzt unseren unverwechselbaren Retro-CCD-Sensor, harten Blitz und sofortige USB-C Smartphone-Verbindung.",
     "selectColor": "Farbe wählen:",
@@ -50,22 +50,16 @@ export const deTranslations: TranslationData = {
       "Holografisches Retro-Sticker-Set",
       "Schnellstartanleitung & 2 Jahre Garantie"
     ],
-    "sageName": "DigiShot Sage",
-    "sageDesc": "Pastell-Salbeigrün & Creme. Das Flaggschiff der Kollektion! Der virale Matcha-Y2K-Look, der perfekt zu deinen Festival-Outfits passt.",
     "blushName": "DigiShot Blush",
-    "blushDesc": "Pastellrosa & Creme. Der TikTok-Hit, perfekt abgestimmt auf Party-Outfits und Glitzer-Make-up.",
+    "blushDesc": "Pastellrosa & Creme. Das Flaggschiff der Kollektion und TikTok-Hit, perfekt abgestimmt auf Party-Outfits und Glitzer-Make-up.",
+    "whiteName": "DigiShot Retro White",
+    "whiteDesc": "Klares Kreideweiß im Stil der legendären Digitalkameras der 2000er Jahre. Minimalismus in Reinform.",
+    "classicName": "DigiShot Classic",
+    "classicDesc": "Cognac-Leder & Terrakotta. Zeitlose Vintage-Ästhetik für stylische Raves und Club-Nächte.",
     "purpleName": "DigiShot Purple",
     "purpleDesc": "Tiefes Club-Lila mit intensiver Neon-Aura. Perfekt für lange Raves, Clubnächte und Festivalbühnen.",
     "blackName": "DigiShot Noir",
-    "blackDesc": "Mattes Schwarz & minimalistisches Industrie-Finish. Der diskrete Begleiter für wilde Afterpartys.",
-    "blueName": "DigiShot Ocean",
-    "blueDesc": "Frisches Ozeanblau, inspiriert von Sommerfestivals, freiem Himmel und Festivalstimmung.",
-    "classicName": "DigiShot Classic",
-    "classicDesc": "Cognac-Leder & Terrakotta. Zeitlose Vintage-Ästhetik für stylische Raves und Club-Nächte.",
-    "redName": "DigiShot Crimson",
-    "redDesc": "Kräftiges Karmesinrot voller Energie. Ein echter Hingucker auf jedem Dancefloor.",
-    "whiteName": "DigiShot Retro White",
-    "whiteDesc": "Klares Kreideweiß im Stil der legendären Digitalkameras der 2000er Jahre. Minimalismus in Reinform."
+    "blackDesc": "Mattes Schwarz & minimalistisches Industrie-Finish. Der diskrete Begleiter für wilde Afterpartys."
   },
   "specs": {
     "sectionTag": "WARUM DIGISHOT ALLES VERÄNDERT",
@@ -178,8 +172,8 @@ export const deTranslations: TranslationData = {
         "handle": "@lara_rave",
         "age": "22",
         "location": "Berlin & Melt Festival",
-        "quote": "Habe die Salbeigrün-Edition mit zum Festival genommen. Morgens beim Katerfrühstück das Kabel rein und wir haben Tränen gelacht. Die Farbe sieht so unfassbar ästhetisch aus!",
-        "variantBought": "DigiShot Sage"
+        "quote": "Habe die DigiShot Blush Edition mit zum Festival genommen. Morgens beim Katerfrühstück das Kabel rein und wir haben Tränen gelacht. Die Farbe sieht so unfassbar ästhetisch aus!",
+        "variantBought": "DigiShot Blush"
       },
       {
         "name": "Felix M.",
@@ -237,7 +231,7 @@ export const deTranslations: TranslationData = {
     "perksTitle": "Vorteile für VIP-Waitlist-Mitglieder:",
     "perk1": "2 Stunden früherer Kauflink vor dem öffentlichen Drop",
     "perk2": "Garantierter 20% Rabattcode mit Code DROP20",
-    "perk3": "Feste Reservierung der gewählten Farbe (8 Editionen)",
+    "perk3": "Feste Reservierung der gewählten Farbe (5 Editionen)",
     "successTitle": "VIP-Platz bestätigt! 🎉",
     "successSubtitle": "Du bist offiziell auf der exklusiven VIP-Prioritätsliste für Drop #1.",
     "vipNumberLabel": "Deine VIP-Wartenummer:",

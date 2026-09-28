@@ -16,10 +16,9 @@ export const CameraModel: React.FC<CameraModelProps> = ({
 }) => {
   const [isFlashingLocal, setIsFlashingLocal] = useState(false);
 
-  // Normalize alias like "green" to "sage", "pink" to "blush", etc.
+  // Normalize alias like "green" or "sage" to "blush", "classic" to "brown"
   const normalizedId =
-    variantId === "green" ? "sage" :
-    variantId === "pink" ? "blush" :
+    variantId === "green" || variantId === "sage" ? "blush" :
     variantId === "classic" ? "brown" :
     variantId;
 

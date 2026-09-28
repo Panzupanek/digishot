@@ -33,7 +33,7 @@ export const enTranslations: TranslationData = {
     "soldOutNotice": "All current inventory is sold out. Reserve priority early access for our limited 100-unit batch."
   },
   "variants": {
-    "sectionTag": "8 ICONIC EDITIONS",
+    "sectionTag": "5 ICONIC EDITIONS",
     "heading": "Choose Your Color For Next Drop",
     "subheading": "Every colorway features our signature lo-fi CCD sensor, harsh flash diode, and instant USB-C phone connectivity.",
     "selectColor": "Select Color:",
@@ -50,22 +50,16 @@ export const enTranslations: TranslationData = {
       "Holographic Retro Sticker Pack",
       "Quick Start Manual & 2-Year Warranty"
     ],
-    "sageName": "DigiShot Sage",
-    "sageDesc": "Pastel Sage Green & Cream White. The flagship drop! Viral matcha-aesthetic Y2K colorway that matches any rave fit.",
     "blushName": "DigiShot Blush",
-    "blushDesc": "Pastel Pink & Cream White. TikTok's favorite match for your party outfits, glitter makeup, and night fits.",
+    "blushDesc": "Pastel Pink & Cream White. The flagship drop and TikTok favorite matching your party outfits, glitter makeup, and night fits.",
+    "whiteName": "DigiShot Retro White",
+    "whiteDesc": "Clean chalk white celebrating the iconic digital cameras of the early 2000s. Pure lo-fi minimalism.",
+    "classicName": "DigiShot Classic",
+    "classicDesc": "Cognac Leather & Terracotta. Timeless vintage vibe built for aesthetic night raves and stylish party nights.",
     "purpleName": "DigiShot Purple",
     "purpleDesc": "Deep electric purple with neon night vibes. Engineered for underground raves and festival lighting.",
     "blackName": "DigiShot Noir",
-    "blackDesc": "Matte noir black & industrial stealth finish. Sleek, minimal, and party-proof companion for late-night afters.",
-    "blueName": "DigiShot Ocean",
-    "blueDesc": "Crisp ocean sky blue inspired by open-air summer festivals and coastal horizon lines.",
-    "classicName": "DigiShot Classic",
-    "classicDesc": "Cognac Leather & Terracotta. Timeless vintage vibe built for aesthetic night raves and stylish party nights.",
-    "redName": "DigiShot Crimson",
-    "redDesc": "Vibrant crimson red bursting with pure party energy. High contrast aesthetic that turns heads in the club.",
-    "whiteName": "DigiShot Retro White",
-    "whiteDesc": "Clean chalk white celebrating the iconic digital cameras of the early 2000s. Pure lo-fi minimalism."
+    "blackDesc": "Matte noir black & industrial stealth finish. Sleek, minimal, and party-proof companion for late-night afters."
   },
   "specs": {
     "sectionTag": "WHY DIGISHOT CHANGES THE GAME",
@@ -178,8 +172,8 @@ export const enTranslations: TranslationData = {
         "handle": "@chloeraver",
         "age": "21",
         "location": "London & Berlin",
-        "quote": "Took the Sage Green DigiShot to a 3-day rave and it was honestly the highlight. We plugged it into our phones at breakfast and couldn't stop laughing. The color is so aesthetic!",
-        "variantBought": "DigiShot Sage"
+        "quote": "Took the DigiShot Blush to a 3-day rave and it was honestly the highlight. We plugged it into our phones at breakfast and couldn't stop laughing. The color is so aesthetic!",
+        "variantBought": "DigiShot Blush"
       },
       {
         "name": "Lucas B.",
@@ -237,7 +231,7 @@ export const enTranslations: TranslationData = {
     "perksTitle": "VIP Waitlist Member Perks:",
     "perk1": "2-hour early access before the public drop goes live",
     "perk2": "Guaranteed 20% secret discount with code DROP20",
-    "perk3": "Colorway unit reservation (8 iconic editions)",
+    "perk3": "Colorway unit reservation (5 iconic editions)",
     "successTitle": "VIP Spot Confirmed! 🎉",
     "successSubtitle": "You are officially on the VIP Priority Access List for Drop #1.",
     "vipNumberLabel": "Your VIP Queue Number:",

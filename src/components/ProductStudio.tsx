@@ -26,12 +26,12 @@ export const ProductStudio: React.FC = () => {
   return (
     <section id="variants" className="py-20 bg-white dark:bg-[#0C0D12] border-y border-black/10 dark:border-white/10 relative transition-colors duration-300">
       {/* Glow highlight */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#A2B997]/15 rounded-full filter blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full filter blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#A2B997]/20 dark:bg-[#A2B997]/10 border border-[#7B9370]/30 dark:border-[#A2B997]/30 text-xs font-mono text-[#5A734F] dark:text-[#A2B997] font-bold">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-pink-500/10 dark:bg-pink-500/15 border border-pink-500/30 text-xs font-mono text-pink-700 dark:text-pink-300 font-bold">
             <Sparkles className="w-3.5 h-3.5" />
             <span>{t.variants.sectionTag}</span>
           </div>
@@ -60,7 +60,7 @@ export const ProductStudio: React.FC = () => {
             <div className="mt-4 flex items-center space-x-3 z-10">
               <button
                 onClick={triggerFlash}
-                className="px-4 py-2 rounded-xl bg-white dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 border border-[#7B9370]/40 dark:border-[#A2B997]/40 text-[#5A734F] dark:text-[#C4D8BC] text-xs font-mono flex items-center space-x-2 transition-all active:scale-95 shadow-sm cursor-pointer"
+                className="px-4 py-2 rounded-xl bg-white dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 border border-pink-500/30 text-pink-700 dark:text-pink-300 text-xs font-mono flex items-center space-x-2 transition-all active:scale-95 shadow-sm cursor-pointer"
               >
                 <Zap className="w-3.5 h-3.5" />
                 <span>{t.hero.flashBtn}</span>
@@ -88,7 +88,7 @@ export const ProductStudio: React.FC = () => {
                   <span className="text-base sm:text-lg text-slate-400 dark:text-slate-500 line-through font-mono font-semibold">
                     {formatPrice(currentVariant.regularPriceCZK, currentVariant.regularPriceEUR)}
                   </span>
-                  <span className="text-2xl sm:text-3xl font-black font-mono text-[#5A734F] dark:text-[#A2B997]">
+                  <span className="text-2xl sm:text-3xl font-black font-mono text-pink-600 dark:text-pink-400">
                     {formatPrice(currentVariant.priceCZK, currentVariant.priceEUR)}
                   </span>
                 </div>
@@ -98,12 +98,12 @@ export const ProductStudio: React.FC = () => {
               </p>
             </div>
 
-            {/* Color Option Cards (Clean 4x2 Grid for all 8 variants) */}
+            {/* Color Option Cards (Clean 5-variant layout) */}
             <div className="space-y-3 pt-2">
               <span className="text-xs font-mono font-bold tracking-wider text-slate-500 dark:text-slate-400 uppercase block">
                 {t.variants.selectColor}
               </span>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
                 {PRODUCT_VARIANTS.map((variant) => {
                   const isSelected = selectedVariant === variant.id;
                   const name =
@@ -118,7 +118,7 @@ export const ProductStudio: React.FC = () => {
                       onClick={() => setSelectedVariant(variant.id)}
                       className={`p-3 rounded-2xl border text-left transition-all relative overflow-hidden flex flex-col justify-between cursor-pointer ${
                         isSelected
-                          ? "bg-[#98A886]/20 border-[#7B9370] dark:border-[#98A886] shadow-sm dark:shadow-[0_0_15px_rgba(152,168,134,0.3)] ring-1 ring-[#98A886]"
+                          ? "bg-pink-500/15 dark:bg-pink-500/20 border-pink-500 dark:border-pink-400 shadow-sm dark:shadow-[0_0_15px_rgba(255,183,197,0.3)] ring-1 ring-pink-400"
                           : "bg-white dark:bg-white/5 border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 text-slate-600 dark:text-slate-400"
                       }`}
                     >
@@ -129,7 +129,7 @@ export const ProductStudio: React.FC = () => {
                           style={{ backgroundColor: variant.colors.primary }}
                         />
                         {isSelected && (
-                          <span className="w-4 h-4 rounded-full bg-[#7B9370] dark:bg-[#98A886] text-white dark:text-black flex items-center justify-center">
+                          <span className="w-4 h-4 rounded-full bg-pink-500 dark:bg-pink-400 text-white dark:text-black flex items-center justify-center">
                             <Check className="w-3 h-3 stroke-[3]" />
                           </span>
                         )}
@@ -185,7 +185,7 @@ export const ProductStudio: React.FC = () => {
             {/* Included in Box Summary */}
             <div className="p-4 rounded-2xl bg-black/[0.03] dark:bg-black/40 border border-black/10 dark:border-white/10 space-y-2">
               <span className="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 flex items-center space-x-1.5">
-                <Package className="w-4 h-4 text-[#7B9370] dark:text-[#A2B997]" />
+                <Package className="w-4 h-4 text-pink-600 dark:text-pink-400" />
                 <span>{t.variants.includedInBox}</span>
               </span>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-slate-600 dark:text-slate-400 font-mono">
@@ -202,7 +202,7 @@ export const ProductStudio: React.FC = () => {
             <div className="pt-2">
               <button
                 onClick={() => openCheckout(selectedVariant)}
-                className="w-full py-4 rounded-2xl bg-gradient-to-r from-[#A2B997] via-[#8FA885] to-[#FF70A6] text-black font-black text-sm sm:text-base shadow-md dark:shadow-neon-sage hover:brightness-110 active:scale-95 transition-all flex items-center justify-center space-x-3 cursor-pointer"
+                className="w-full py-4 rounded-2xl bg-gradient-to-r from-pink-400 via-rose-400 to-amber-300 text-black font-black text-sm sm:text-base shadow-md dark:shadow-[0_0_20px_rgba(255,112,166,0.3)] hover:brightness-110 active:scale-95 transition-all flex items-center justify-center space-x-3 cursor-pointer"
               >
                 <Bell className="w-5 h-5 text-black" />
                 <span>{t.variants.reserveBtn}</span>

@@ -32,7 +32,7 @@ const ShopContext = createContext<ShopContextType | undefined>(undefined);
 export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [lang, setLangState] = useState<Language>("cz");
   const [currency, setCurrencyState] = useState<Currency>("CZK");
-  const [selectedVariant, setSelectedVariant] = useState<CameraVariantId>("sage");
+  const [selectedVariant, setSelectedVariant] = useState<CameraVariantId>("blush");
   const [selectedAddOns, setSelectedAddOns] = useState<string[]>(["strap"]);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState<boolean>(false);
   const [isFlashActive, setIsFlashActive] = useState<boolean>(false);
