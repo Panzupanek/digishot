@@ -24,7 +24,7 @@ export interface CameraColorOption {
 export const CAMERA_COLOR_OPTIONS: CameraColorOption[] = [
   {
     id: "sage",
-    name: "Sage Green",
+    name: "DigiShot Sage",
     image: "camera-green.png",
     badgeText: "SAGE GREEN EDITION",
     colorDot: "#98A886",
@@ -34,7 +34,7 @@ export const CAMERA_COLOR_OPTIONS: CameraColorOption[] = [
   },
   {
     id: "blush",
-    name: "Blush Pink",
+    name: "DigiShot Blush",
     image: "camera-pink.png",
     badgeText: "BLUSH PINK EDITION",
     colorDot: "#FFB7C5",
@@ -44,7 +44,7 @@ export const CAMERA_COLOR_OPTIONS: CameraColorOption[] = [
   },
   {
     id: "purple",
-    name: "Deep Purple",
+    name: "DigiShot Purple",
     image: "camera-purple.png",
     badgeText: "DEEP PURPLE EDITION",
     colorDot: "#9333EA",
@@ -54,9 +54,9 @@ export const CAMERA_COLOR_OPTIONS: CameraColorOption[] = [
   },
   {
     id: "black",
-    name: "Classic Black",
+    name: "DigiShot Noir",
     image: "camera-black.png",
-    badgeText: "CLASSIC BLACK EDITION",
+    badgeText: "CLASSIC NOIR EDITION",
     colorDot: "#27272A",
     glowColor: "rgba(39, 39, 42, 0.5)",
     borderActive: "border-slate-500",
@@ -64,7 +64,7 @@ export const CAMERA_COLOR_OPTIONS: CameraColorOption[] = [
   },
   {
     id: "blue",
-    name: "Ocean Blue",
+    name: "DigiShot Ocean",
     image: "camera-blue.png",
     badgeText: "OCEAN BLUE EDITION",
     colorDot: "#38BDF8",
@@ -74,9 +74,9 @@ export const CAMERA_COLOR_OPTIONS: CameraColorOption[] = [
   },
   {
     id: "brown",
-    name: "Terracotta / Brown",
+    name: "DigiShot Classic",
     image: "camera-brown.png",
-    badgeText: "TERRACOTTA / BROWN EDITION",
+    badgeText: "VINTAGE CLASSIC EDITION",
     colorDot: "#8D4F28",
     glowColor: "rgba(141, 79, 40, 0.45)",
     borderActive: "border-amber-600",
@@ -84,7 +84,7 @@ export const CAMERA_COLOR_OPTIONS: CameraColorOption[] = [
   },
   {
     id: "red",
-    name: "Crimson Red",
+    name: "DigiShot Crimson",
     image: "camera-red.png",
     badgeText: "CRIMSON RED EDITION",
     colorDot: "#DC2626",
@@ -94,7 +94,7 @@ export const CAMERA_COLOR_OPTIONS: CameraColorOption[] = [
   },
   {
     id: "white",
-    name: "Retro White",
+    name: "DigiShot Retro White",
     image: "camera-white.png",
     badgeText: "RETRO WHITE EDITION",
     colorDot: "#E2E8F0",
@@ -107,10 +107,12 @@ export const CAMERA_COLOR_OPTIONS: CameraColorOption[] = [
 export interface ProductVariant {
   id: CameraVariantId;
   nameKey?: string;
-  name?: string;
+  name: string;
   descKey?: string;
   priceCZK: number;
   priceEUR: number;
+  regularPriceCZK: number;
+  regularPriceEUR: number;
   badge: string;
   badgeColor: string;
   colors: {
@@ -128,17 +130,19 @@ export const PRODUCT_VARIANTS: ProductVariant[] = [
   {
     id: "sage",
     nameKey: "sageName",
-    name: "Sage Green",
+    name: "DigiShot Sage",
     descKey: "sageDesc",
-    priceCZK: 1290,
-    priceEUR: 49,
+    priceCZK: 1490,
+    priceEUR: 60,
+    regularPriceCZK: 1890,
+    regularPriceEUR: 75,
     badge: "★ BESTSELLER • SAGE EDITION",
     badgeColor: "bg-emerald-500/20 text-[#A2B997] border-[#A2B997]/40",
     colors: {
-      primary: "#A2B997",
+      primary: "#98A886",
       secondary: "#F4F7F2",
       accent: "#768E6B",
-      gradient: "from-[#A2B997] via-[#8FA885] to-[#F4F7F2]",
+      gradient: "from-[#98A886] via-[#8FA885] to-[#F4F7F2]",
       strapColor: "#8A9A86",
     },
     stockCount: 12,
@@ -147,26 +151,32 @@ export const PRODUCT_VARIANTS: ProductVariant[] = [
   {
     id: "blush",
     nameKey: "blushName",
-    name: "Blush Pink",
+    name: "DigiShot Blush",
     descKey: "blushDesc",
-    priceCZK: 1290,
-    priceEUR: 49,
+    priceCZK: 1490,
+    priceEUR: 60,
+    regularPriceCZK: 1890,
+    regularPriceEUR: 75,
     badge: "TIKTOK BLUSH",
     badgeColor: "bg-pink-500/20 text-pink-300 border-pink-500/30",
     colors: {
-      primary: "#FF9EBB",
+      primary: "#FFB7C5",
       secondary: "#FFF5F7",
       accent: "#FF4D88",
-      gradient: "from-[#FF9EBB] via-[#FF6F99] to-[#FFF0F4]",
+      gradient: "from-[#FFB7C5] via-[#FF6F99] to-[#FFF0F4]",
       strapColor: "#FF70A6",
     },
     stockCount: 16,
   },
   {
     id: "purple",
-    name: "Deep Purple",
-    priceCZK: 1290,
-    priceEUR: 49,
+    nameKey: "purpleName",
+    name: "DigiShot Purple",
+    descKey: "purpleDesc",
+    priceCZK: 1490,
+    priceEUR: 60,
+    regularPriceCZK: 1890,
+    regularPriceEUR: 75,
     badge: "DEEP PURPLE EDITION",
     badgeColor: "bg-purple-500/20 text-purple-300 border-purple-500/30",
     colors: {
@@ -180,10 +190,14 @@ export const PRODUCT_VARIANTS: ProductVariant[] = [
   },
   {
     id: "black",
-    name: "Classic Black",
-    priceCZK: 1290,
-    priceEUR: 49,
-    badge: "CLASSIC BLACK EDITION",
+    nameKey: "blackName",
+    name: "DigiShot Noir",
+    descKey: "blackDesc",
+    priceCZK: 1490,
+    priceEUR: 60,
+    regularPriceCZK: 1890,
+    regularPriceEUR: 75,
+    badge: "CLASSIC NOIR EDITION",
     badgeColor: "bg-slate-500/20 text-slate-300 border-slate-500/30",
     colors: {
       primary: "#27272A",
@@ -196,9 +210,13 @@ export const PRODUCT_VARIANTS: ProductVariant[] = [
   },
   {
     id: "blue",
-    name: "Ocean Blue",
-    priceCZK: 1290,
-    priceEUR: 49,
+    nameKey: "blueName",
+    name: "DigiShot Ocean",
+    descKey: "blueDesc",
+    priceCZK: 1490,
+    priceEUR: 60,
+    regularPriceCZK: 1890,
+    regularPriceEUR: 75,
     badge: "OCEAN BLUE EDITION",
     badgeColor: "bg-sky-500/20 text-sky-300 border-sky-500/30",
     colors: {
@@ -213,11 +231,13 @@ export const PRODUCT_VARIANTS: ProductVariant[] = [
   {
     id: "brown",
     nameKey: "classicName",
-    name: "Terracotta / Brown",
+    name: "DigiShot Classic",
     descKey: "classicDesc",
-    priceCZK: 1290,
-    priceEUR: 49,
-    badge: "VINTAGE TERRACOTTA",
+    priceCZK: 1490,
+    priceEUR: 60,
+    regularPriceCZK: 1890,
+    regularPriceEUR: 75,
+    badge: "VINTAGE CLASSIC",
     badgeColor: "bg-amber-500/20 text-amber-300 border-amber-500/30",
     colors: {
       primary: "#8D4F28",
@@ -230,9 +250,13 @@ export const PRODUCT_VARIANTS: ProductVariant[] = [
   },
   {
     id: "red",
-    name: "Crimson Red",
-    priceCZK: 1290,
-    priceEUR: 49,
+    nameKey: "redName",
+    name: "DigiShot Crimson",
+    descKey: "redDesc",
+    priceCZK: 1490,
+    priceEUR: 60,
+    regularPriceCZK: 1890,
+    regularPriceEUR: 75,
     badge: "CRIMSON RED EDITION",
     badgeColor: "bg-red-500/20 text-red-300 border-red-500/30",
     colors: {
@@ -246,37 +270,23 @@ export const PRODUCT_VARIANTS: ProductVariant[] = [
   },
   {
     id: "white",
-    name: "Retro White",
-    priceCZK: 1290,
-    priceEUR: 49,
+    nameKey: "whiteName",
+    name: "DigiShot Retro White",
+    descKey: "whiteDesc",
+    priceCZK: 1490,
+    priceEUR: 60,
+    regularPriceCZK: 1890,
+    regularPriceEUR: 75,
     badge: "RETRO WHITE EDITION",
     badgeColor: "bg-slate-200/40 text-slate-800 dark:text-slate-100 border-slate-300/40",
     colors: {
-      primary: "#F8FAFC",
-      secondary: "#E2E8F0",
-      accent: "#CBD5E1",
+      primary: "#E2E8F0",
+      secondary: "#CBD5E1",
+      accent: "#94A3B8",
       gradient: "from-[#F8FAFC] via-[#E2E8F0] to-[#CBD5E1]",
       strapColor: "#94A3B8",
     },
     stockCount: 15,
-  },
-  {
-    id: "classic",
-    nameKey: "classicName",
-    name: "Classic",
-    descKey: "classicDesc",
-    priceCZK: 1290,
-    priceEUR: 49,
-    badge: "VINTAGE COGNAC",
-    badgeColor: "bg-amber-500/20 text-amber-300 border-amber-500/30",
-    colors: {
-      primary: "#8D4F28",
-      secondary: "#1A1A1E",
-      accent: "#D4AF37",
-      gradient: "from-[#8D4F28] via-[#5A3219] to-[#1A1A1E]",
-      strapColor: "#C2854A",
-    },
-    stockCount: 10,
   },
 ];
 

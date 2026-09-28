@@ -24,7 +24,7 @@ export const StickyBottomBar: React.FC = () => {
                   : "border-transparent opacity-60"
               }`}
               style={{ backgroundColor: v.colors.primary }}
-              title={t.variants[v.nameKey]}
+              title={(v.nameKey && (t.variants as any)[v.nameKey]) || v.name}
             />
           ))}
         </div>

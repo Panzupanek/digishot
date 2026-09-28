@@ -48,8 +48,18 @@ export interface TranslationData {
     sageDesc: string;
     blushName: string;
     blushDesc: string;
+    purpleName: string;
+    purpleDesc: string;
+    blackName: string;
+    blackDesc: string;
+    blueName: string;
+    blueDesc: string;
     classicName: string;
     classicDesc: string;
+    redName: string;
+    redDesc: string;
+    whiteName: string;
+    whiteDesc: string;
   };
   specs: {
     sectionTag: string;

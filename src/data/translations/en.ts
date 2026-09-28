@@ -29,18 +29,18 @@ export const enTranslations: TranslationData = {
     "flashBtn": "⚡ Test The Flash",
     "flashHint": "Click to trigger authentic camera flash simulation",
     "socialProof": "4.9/5 from 1,850+ partygoers • 1,420+ already on VIP waitlist",
-    "priceTag": "Drop Price: €49",
+    "priceTag": "Drop Price: €60",
     "soldOutNotice": "All current inventory is sold out. Reserve priority early access for our limited 100-unit batch."
   },
   "variants": {
-    "sectionTag": "3 ICONIC EDITIONS",
+    "sectionTag": "8 ICONIC EDITIONS",
     "heading": "Choose Your Color For Next Drop",
     "subheading": "Every colorway features our signature lo-fi CCD sensor, harsh flash diode, and instant USB-C phone connectivity.",
     "selectColor": "Select Color:",
     "soldOutStatus": "STATUS: SOLD OUT (0/100 in stock)",
     "stockBadge": "SOLD OUT • NEXT DROP IN 30 DAYS",
     "nextDropNotice": "Next drop in 30 days • Limited 100 pieces",
-    "reserveBtn": "Reserve Spot in Drop #1 (+ 10% OFF)",
+    "reserveBtn": "Reserve Spot in Drop #1 (-20% OFF)",
     "includedInBox": "What's in the box:",
     "boxItems": [
       "DigiShot Retro Digital Camera",
@@ -54,8 +54,18 @@ export const enTranslations: TranslationData = {
     "sageDesc": "Pastel Sage Green & Cream White. The flagship drop! Viral matcha-aesthetic Y2K colorway that matches any rave fit.",
     "blushName": "DigiShot Blush",
     "blushDesc": "Pastel Pink & Cream White. TikTok's favorite match for your party outfits, glitter makeup, and night fits.",
+    "purpleName": "DigiShot Purple",
+    "purpleDesc": "Deep electric purple with neon night vibes. Engineered for underground raves and festival lighting.",
+    "blackName": "DigiShot Noir",
+    "blackDesc": "Matte noir black & industrial stealth finish. Sleek, minimal, and party-proof companion for late-night afters.",
+    "blueName": "DigiShot Ocean",
+    "blueDesc": "Crisp ocean sky blue inspired by open-air summer festivals and coastal horizon lines.",
     "classicName": "DigiShot Classic",
-    "classicDesc": "Cognac Leather & Matte Black. Timeless vintage vibe built for aesthetic night raves and stylish party nights."
+    "classicDesc": "Cognac Leather & Terracotta. Timeless vintage vibe built for aesthetic night raves and stylish party nights.",
+    "redName": "DigiShot Crimson",
+    "redDesc": "Vibrant crimson red bursting with pure party energy. High contrast aesthetic that turns heads in the club.",
+    "whiteName": "DigiShot Retro White",
+    "whiteDesc": "Clean chalk white celebrating the iconic digital cameras of the early 2000s. Pure lo-fi minimalism."
   },
   "specs": {
     "sectionTag": "WHY DIGISHOT CHANGES THE GAME",
@@ -140,7 +150,7 @@ export const enTranslations: TranslationData = {
       },
       {
         "feature": "Fear of losing expensive device",
-        "digishot": "Low (sturdy build, only €49)",
+        "digishot": "Low (sturdy build, only €60)",
         "smartphone": "Extreme (€1,000+ phone)",
         "disposableFilm": "Low"
       }
@@ -200,7 +210,7 @@ export const enTranslations: TranslationData = {
       },
       {
         "q": "Is there a discount for waitlist members?",
-        "a": "Yes! Everyone on the VIP Waitlist receives a guaranteed 10% discount code and priority allocation for their chosen colorway."
+        "a": "Yes! Everyone on the VIP Waitlist receives a guaranteed 20% discount code (DROP20) and priority allocation for their chosen colorway."
       },
       {
         "q": "How do I transfer photos to my phone?",
@@ -218,20 +228,20 @@ export const enTranslations: TranslationData = {
   },
   "waitlist": {
     "modalTitle": "VIP Drop #1 Reservation",
-    "modalSubtitle": "The previous 100-piece batch sold out in 48 hours. Secure priority access and get a 10% secret discount code.",
+    "modalSubtitle": "The previous 100-piece batch sold out in 48 hours. Secure priority access and get a 20% secret discount code.",
     "selectVariantTitle": "Choose your preferred drop edition:",
     "emailPlaceholder": "Your email (for priority access link)",
     "phonePlaceholder": "Phone number (for SMS drop alert)",
     "namePlaceholder": "Your name",
-    "submitBtn": "Get Priority Drop Access (+ 10% OFF)",
+    "submitBtn": "Get Priority Drop Access (-20% OFF)",
     "perksTitle": "VIP Waitlist Member Perks:",
     "perk1": "2-hour early access before the public drop goes live",
-    "perk2": "Guaranteed 10% secret discount off the €49 price",
-    "perk3": "Colorway unit reservation (Sage / Blush / Classic)",
+    "perk2": "Guaranteed 20% secret discount with code DROP20",
+    "perk3": "Colorway unit reservation (8 iconic editions)",
     "successTitle": "VIP Spot Confirmed! 🎉",
     "successSubtitle": "You are officially on the VIP Priority Access List for Drop #1.",
     "vipNumberLabel": "Your VIP Queue Number:",
-    "successCodeNote": "We have emailed your secret access link and 10% discount code. You will also receive an SMS alert right before the drop timer hits zero!",
+    "successCodeNote": "We have emailed your secret access link and 20% discount code DROP20. You will also receive an SMS alert right before the drop timer hits zero!",
     "closeBtn": "Back to Page"
   },
   "footer": {

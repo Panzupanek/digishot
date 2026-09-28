@@ -73,38 +73,52 @@ export const ProductStudio: React.FC = () => {
 
           {/* Right Column: Variant Selector, Specs & Reserve Action */}
           <div className="lg:col-span-6 space-y-6">
-            {/* Title & Description */}
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
+            {/* Title, Badge & Pricing */}
+            <div className="space-y-3">
+              {/* Discount / Waitlist badge */}
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold tracking-wide">
+                <span>⚡ -20 % PRO WAITLIST S KÓDEM DROP20</span>
+              </div>
+
+              <div className="flex flex-wrap items-baseline justify-between gap-3">
                 <h3 className="text-2xl sm:text-3xl font-black font-sans text-slate-900 dark:text-white transition-colors">
-                  {t.variants[currentVariant.nameKey]}
+                  {(currentVariant.nameKey && (t.variants as any)[currentVariant.nameKey]) || currentVariant.name}
                 </h3>
-                <span className="text-2xl sm:text-3xl font-black font-mono text-[#7B9370] dark:text-[#A2B997]">
-                  {currentPriceFormatted}
-                </span>
+                <div className="flex items-baseline gap-2.5">
+                  <span className="text-base sm:text-lg text-slate-400 dark:text-slate-500 line-through font-mono font-semibold">
+                    {formatPrice(currentVariant.regularPriceCZK, currentVariant.regularPriceEUR)}
+                  </span>
+                  <span className="text-2xl sm:text-3xl font-black font-mono text-[#5A734F] dark:text-[#A2B997]">
+                    {formatPrice(currentVariant.priceCZK, currentVariant.priceEUR)}
+                  </span>
+                </div>
               </div>
               <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal transition-colors">
-                {t.variants[currentVariant.descKey]}
+                {(currentVariant.descKey && (t.variants as any)[currentVariant.descKey]) || ""}
               </p>
             </div>
 
-            {/* Color Option Cards (Clean, without micro-label clutter) */}
+            {/* Color Option Cards (Clean 4x2 Grid for all 8 variants) */}
             <div className="space-y-3 pt-2">
               <span className="text-xs font-mono font-bold tracking-wider text-slate-500 dark:text-slate-400 uppercase block">
                 {t.variants.selectColor}
               </span>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                 {PRODUCT_VARIANTS.map((variant) => {
                   const isSelected = selectedVariant === variant.id;
+                  const name =
+                    (variant.nameKey && (t.variants as any)[variant.nameKey]) ||
+                    variant.name;
+
                   return (
                     <motion.button
                       key={variant.id}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={() => setSelectedVariant(variant.id)}
-                      className={`p-3.5 rounded-2xl border text-left transition-all relative overflow-hidden flex flex-col justify-between cursor-pointer ${
+                      className={`p-3 rounded-2xl border text-left transition-all relative overflow-hidden flex flex-col justify-between cursor-pointer ${
                         isSelected
-                          ? "bg-[#A2B997]/20 border-[#7B9370] dark:border-[#A2B997] shadow-sm dark:shadow-neon-sage"
+                          ? "bg-[#98A886]/20 border-[#7B9370] dark:border-[#98A886] shadow-sm dark:shadow-[0_0_15px_rgba(152,168,134,0.3)] ring-1 ring-[#98A886]"
                           : "bg-white dark:bg-white/5 border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 text-slate-600 dark:text-slate-400"
                       }`}
                     >
@@ -115,13 +129,13 @@ export const ProductStudio: React.FC = () => {
                           style={{ backgroundColor: variant.colors.primary }}
                         />
                         {isSelected && (
-                          <span className="w-4 h-4 rounded-full bg-[#7B9370] dark:bg-[#A2B997] text-white dark:text-black flex items-center justify-center">
+                          <span className="w-4 h-4 rounded-full bg-[#7B9370] dark:bg-[#98A886] text-white dark:text-black flex items-center justify-center">
                             <Check className="w-3 h-3 stroke-[3]" />
                           </span>
                         )}
                       </div>
                       <span className="text-xs font-bold font-sans text-slate-900 dark:text-white block truncate">
-                        {t.variants[variant.nameKey]}
+                        {name}
                       </span>
                     </motion.button>
                   );

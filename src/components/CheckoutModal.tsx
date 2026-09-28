@@ -160,12 +160,14 @@ export const CheckoutModal: React.FC = () => {
 
                   <div className="flex items-center justify-between text-xs">
                     <span className="text-slate-600 dark:text-slate-400">Reserved Color:</span>
-                    <span className="text-slate-900 dark:text-white font-bold">{t.variants[variantObj.nameKey]}</span>
+                    <span className="text-slate-900 dark:text-white font-bold">
+                      {(variantObj.nameKey && (t.variants as any)[variantObj.nameKey]) || variantObj.name}
+                    </span>
                   </div>
 
                   <div className="flex items-center justify-between text-xs">
                     <span className="text-slate-600 dark:text-slate-400">VIP Discount:</span>
-                    <span className="text-[#e11d48] dark:text-[#FF70A6] font-bold">10% OFF ({priceFormatted})</span>
+                    <span className="text-[#e11d48] dark:text-[#FF70A6] font-bold">20% OFF (Kód DROP20)</span>
                   </div>
                 </div>
 
@@ -196,9 +198,10 @@ export const CheckoutModal: React.FC = () => {
                   <span className="text-xs font-mono font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider block">
                     {t.waitlist.selectVariantTitle}
                   </span>
-                  <div className="grid grid-cols-3 gap-2">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                     {PRODUCT_VARIANTS.map((v) => {
                       const active = selectedVariant === v.id;
+                      const name = (v.nameKey && (t.variants as any)[v.nameKey]) || v.name;
                       return (
                         <button
                           key={v.id}
@@ -214,7 +217,7 @@ export const CheckoutModal: React.FC = () => {
                             className="w-3 h-3 rounded-full inline-block mr-1.5"
                             style={{ backgroundColor: v.colors.primary }}
                           />
-                          <span className="truncate block">{t.variants[v.nameKey]}</span>
+                          <span className="truncate block">{name}</span>
                         </button>
                       );
                     })}

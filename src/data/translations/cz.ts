@@ -29,18 +29,18 @@ export const czTranslations: TranslationData = {
     "flashBtn": "⚡ Vyzkoušet blesk",
     "flashHint": "Klikni pro simulaci autentického party blesku",
     "socialProof": "4.9/5 od 1 850+ party lovers • Již 1 420+ lidí na waitlistu",
-    "priceTag": "Drop cena: 1 290 Kč",
+    "priceTag": "Drop cena: 1 490 Kč",
     "soldOutNotice": "Všechny skladové zásoby jsou momentálně rozebrány. Rezervuj si přednostní přístup k limitované sérii 100 kusů."
   },
   "variants": {
-    "sectionTag": "3 IKONICKÉ EDICE",
+    "sectionTag": "8 IKONICKÝCH EDIC",
     "heading": "Vyber si barvu pro nadcházející drop",
     "subheading": "Všechny varianty sdílejí legendární retro CCD senzor s drsným bleskem a okamžitým USB-C propojením s mobilem.",
     "selectColor": "Zvolit barvu:",
     "soldOutStatus": "STATUS: VYPRODÁNO (0/100 ks skladem)",
     "stockBadge": "VYPRODÁNO • DROP ZA 30 DNÍ",
     "nextDropNotice": "Další drop za 30 dní • Limitovaná série 100 ks",
-    "reserveBtn": "Zarezervovat v dropu #1 (+ 10% sleva)",
+    "reserveBtn": "Zarezervovat v dropu #1 (sleva -20 %)",
     "includedInBox": "Co najdeš v balení:",
     "boxItems": [
       "DigiShot retro fotoaparát",
@@ -54,8 +54,18 @@ export const czTranslations: TranslationData = {
     "sageDesc": "Šalvějově zelená & smetanový krém. Vlajková loď kolekce! Jemná Y2K matcha estetika, která perfektně doplní tvůj festivalový fit.",
     "blushName": "DigiShot Blush",
     "blushDesc": "Pastelově růžová & vanilkový krém. Hit TikToku, perfektní k party outfitu a festivalovému třpytkovému líčení.",
+    "purpleName": "DigiShot Purple",
+    "purpleDesc": "Sytě fialový odstín s noční klubovou aurou. Navrženo pro noční ravy, neonová světla a festivalový vibe.",
+    "blackName": "DigiShot Noir",
+    "blackDesc": "Matná černá & minimalistický industriální styl. Diskrétní společník na divoké klubové afterparty.",
+    "blueName": "DigiShot Ocean",
+    "blueDesc": "Svěží azurově modrá inspirovaná letními festivaly, otevřeným nebem a mořským pobřežím.",
     "classicName": "DigiShot Classic",
-    "classicDesc": "Koňaková kůže & matná černá. Nadčasová retro estetika pro elegantní noční ravy a stylové večírky."
+    "classicDesc": "Koňaková kůže & terakota. Nadčasová vintage estetika pro elegantní noční akce a stylové večírky.",
+    "redName": "DigiShot Crimson",
+    "redDesc": "Výrazná karmínově červená plná energie a vášně. Okamžitě upoutá pozornost na každém tanečním parketu.",
+    "whiteName": "DigiShot Retro White",
+    "whiteDesc": "Čistá křídově bílá evokující ikonické foťáky počátku milénia. Minimalismus v ryzí retro podobě."
   },
   "specs": {
     "sectionTag": "PROČ DIGISHOT MĚNÍ PRAVIDLA HRY",
@@ -140,7 +150,7 @@ export const czTranslations: TranslationData = {
       },
       {
         "feature": "Strach ze ztráty drahého zařízení",
-        "digishot": "Nízký (odolné tělo, 1 290 Kč)",
+        "digishot": "Nízký (odolné tělo, 1 490 Kč)",
         "smartphone": "Obrovský (telefon za 25 000+)",
         "disposableFilm": "Nízký"
       }
@@ -200,7 +210,7 @@ export const czTranslations: TranslationData = {
       },
       {
         "q": "Získám slevu za registraci na waitlist?",
-        "a": "Ano! Všichni zaregistrovaní získají garantovanou 10% slevu na celou objednávku a jistotu, že jejich vybraná barva bude rezervována."
+        "a": "Ano! Všichni zaregistrovaní získají garantovanou 20% slevu na celou objednávku (kód DROP20) a jistotu, že jejich vybraná barva bude rezervována."
       },
       {
         "q": "Jak přesně přenesu fotky do svého telefonu?",
@@ -218,20 +228,20 @@ export const czTranslations: TranslationData = {
   },
   "waitlist": {
     "modalTitle": "VIP Rezervace do Dropu #1",
-    "modalSubtitle": "Předchozí série 100 ks byla vyprodána za 48 hodin. Zaregistruj se a získej přednostní nákupní přístup a slevu 10%.",
+    "modalSubtitle": "Předchozí série 100 ks byla vyprodána za 48 hodin. Zaregistruj se a získej přednostní nákupní přístup a slevu 20 %.",
     "selectVariantTitle": "Vyber preferovanou edici pro drop:",
     "emailPlaceholder": "Tvůj e-mail (pro zaslání přednostního odkazu)",
     "phonePlaceholder": "Telefonní číslo (+420)",
     "namePlaceholder": "Tvoje jméno",
-    "submitBtn": "Získat přednostní přístup k dropu (+ 10% sleva)",
+    "submitBtn": "Získat přednostní přístup k dropu (sleva -20 %)",
     "perksTitle": "Výhody pro členy VIP Waitlistu:",
     "perk1": "2 hodiny přednostní přístup k nákupu před veřejným spuštěním",
-    "perk2": "Garantovaný slevový kód na 10% slevu z ceny 1 290 Kč",
-    "perk3": "Rezervace vybrané barvy (Sage / Blush / Classic)",
+    "perk2": "Garantovaný slevový kód na 20% slevu (kód DROP20)",
+    "perk3": "Rezervace vybrané barvy (8 ikonických edic)",
     "successTitle": "Místo na VIP Waitlistu je tvoje! 🎉",
     "successSubtitle": "Skvělé! Úspěšně jsme tě zařadili na seznam přednostních nákupčích pro Drop #1.",
     "vipNumberLabel": "Tvé VIP pořadové číslo:",
-    "successCodeNote": "Tajný přístupový link a 10% slevový kód jsme ti právě odeslali na zadaný e-mail. Jakmile odpočet skončí, pošleme ti SMS notifikaci.",
+    "successCodeNote": "Tajný přístupový link a 20% slevový kód DROP20 jsme ti právě odeslali na zadaný e-mail. Jakmile odpočet skončí, pošleme ti SMS notifikaci.",
     "closeBtn": "Zpět na stránku"
   },
   "footer": {

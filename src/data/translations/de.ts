@@ -29,18 +29,18 @@ export const deTranslations: TranslationData = {
     "flashBtn": "⚡ Blitz testen",
     "flashHint": "Klicke für echte Kamerablitz-Simulation",
     "socialProof": "4.9/5 von über 1.850 Partygängern • 1.420+ auf dem VIP-Waitlist",
-    "priceTag": "Drop-Preis: 49 €",
+    "priceTag": "Drop-Preis: 60 €",
     "soldOutNotice": "Aktuell alle Bestände ausverkauft. Sichere dir bevorzugten Vorabzugang zur limitierten 100-Stück-Serie."
   },
   "variants": {
-    "sectionTag": "3 KULTIGE EDITIONEN",
+    "sectionTag": "8 KULTIGE EDITIONEN",
     "heading": "Wähle deine Farbe für den nächsten Drop",
     "subheading": "Jede Farbvariante besitzt unseren unverwechselbaren Retro-CCD-Sensor, harten Blitz und sofortige USB-C Smartphone-Verbindung.",
     "selectColor": "Farbe wählen:",
     "soldOutStatus": "STATUS: AUSVERKAUFT (0/100 Stück)",
     "stockBadge": "AUSVERKAUFT • DROP IN 30 TAGEN",
     "nextDropNotice": "Nächster Drop in 30 Tagen • Limitierte 100 Stück",
-    "reserveBtn": "Platz im Drop #1 sichern (+ 10% Rabatt)",
+    "reserveBtn": "Platz im Drop #1 sichern (-20% Rabatt)",
     "includedInBox": "Das ist in der Box:",
     "boxItems": [
       "DigiShot Retro Digitalkamera",
@@ -54,8 +54,18 @@ export const deTranslations: TranslationData = {
     "sageDesc": "Pastell-Salbeigrün & Creme. Das Flaggschiff der Kollektion! Der virale Matcha-Y2K-Look, der perfekt zu deinen Festival-Outfits passt.",
     "blushName": "DigiShot Blush",
     "blushDesc": "Pastellrosa & Creme. Der TikTok-Hit, perfekt abgestimmt auf Party-Outfits und Glitzer-Make-up.",
+    "purpleName": "DigiShot Purple",
+    "purpleDesc": "Tiefes Club-Lila mit intensiver Neon-Aura. Perfekt für lange Raves, Clubnächte und Festivalbühnen.",
+    "blackName": "DigiShot Noir",
+    "blackDesc": "Mattes Schwarz & minimalistisches Industrie-Finish. Der diskrete Begleiter für wilde Afterpartys.",
+    "blueName": "DigiShot Ocean",
+    "blueDesc": "Frisches Ozeanblau, inspiriert von Sommerfestivals, freiem Himmel und Festivalstimmung.",
     "classicName": "DigiShot Classic",
-    "classicDesc": "Cognac-Leder & Matt-Schwarz. Zeitlose Vintage-Ästhetik für stylische Raves und Club-Nächte."
+    "classicDesc": "Cognac-Leder & Terrakotta. Zeitlose Vintage-Ästhetik für stylische Raves und Club-Nächte.",
+    "redName": "DigiShot Crimson",
+    "redDesc": "Kräftiges Karmesinrot voller Energie. Ein echter Hingucker auf jedem Dancefloor.",
+    "whiteName": "DigiShot Retro White",
+    "whiteDesc": "Klares Kreideweiß im Stil der legendären Digitalkameras der 2000er Jahre. Minimalismus in Reinform."
   },
   "specs": {
     "sectionTag": "WARUM DIGISHOT ALLES VERÄNDERT",
@@ -140,7 +150,7 @@ export const deTranslations: TranslationData = {
       },
       {
         "feature": "Angst vor Geräteverlust",
-        "digishot": "Gering (robust, nur 49 €)",
+        "digishot": "Gering (robust, nur 60 €)",
         "smartphone": "Sehr hoch (1.000 €+ Handy)",
         "disposableFilm": "Gering"
       }
@@ -200,7 +210,7 @@ export const deTranslations: TranslationData = {
       },
       {
         "q": "Gibt es einen Rabatt für Waitlist-Mitglieder?",
-        "a": "Ja! Alle auf der VIP-Liste erhalten garantierte 10% Rabatt auf ihre Bestellung und eine gesicherte Vorabreservierung ihrer Wunschfarbe."
+        "a": "Ja! Alle auf der VIP-Liste erhalten garantierte 20% Rabatt auf ihre Bestellung (Code DROP20) und eine gesicherte Vorabreservierung ihrer Wunschfarbe."
       },
       {
         "q": "Wie übertrage ich die Fotos auf mein Handy?",
@@ -218,20 +228,20 @@ export const deTranslations: TranslationData = {
   },
   "waitlist": {
     "modalTitle": "VIP Drop #1 Reservierung",
-    "modalSubtitle": "Die vorherige Serie von 100 Stück war in 48 Stunden ausverkauft. Sichere dir jetzt Vorabzugang und 10% VIP-Rabatt.",
+    "modalSubtitle": "Die vorherige Serie von 100 Stück war in 48 Stunden ausverkauft. Sichere dir jetzt Vorabzugang und 20% VIP-Rabatt.",
     "selectVariantTitle": "Wähle deine bevorzugte Drop-Edition:",
     "emailPlaceholder": "Deine E-Mail-Adresse (für VIP-Zugangslink)",
     "phonePlaceholder": "Telefonnummer (für SMS-Drop-Alarm)",
     "namePlaceholder": "Dein Name",
-    "submitBtn": "Exklusiven Drop-Zugang sichern (+ 10% Rabatt)",
+    "submitBtn": "Exklusiven Drop-Zugang sichern (-20% Rabatt)",
     "perksTitle": "Vorteile für VIP-Waitlist-Mitglieder:",
     "perk1": "2 Stunden früherer Kauflink vor dem öffentlichen Drop",
-    "perk2": "Garantierter 10% Rabattcode auf den Drop-Preis von 49 €",
-    "perk3": "Feste Reservierung der gewählten Farbe (Sage / Blush / Classic)",
+    "perk2": "Garantierter 20% Rabattcode mit Code DROP20",
+    "perk3": "Feste Reservierung der gewählten Farbe (8 Editionen)",
     "successTitle": "VIP-Platz bestätigt! 🎉",
     "successSubtitle": "Du bist offiziell auf der exklusiven VIP-Prioritätsliste für Drop #1.",
     "vipNumberLabel": "Deine VIP-Wartenummer:",
-    "successCodeNote": "Deinen geheimen Zugangslink und 10% Rabattcode haben wir dir per E-Mail gesendet. Sobald der Countdown abläuft, erhältst du zudem eine SMS!",
+    "successCodeNote": "Deinen geheimen Zugangslink und 20% Rabattcode DROP20 haben wir dir per E-Mail gesendet. Sobald der Countdown abläuft, erhältst du zudem eine SMS!",
     "closeBtn": "Zurück zur Seite"
   },
   "footer": {

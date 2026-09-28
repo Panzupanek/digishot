@@ -92,7 +92,7 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
     );
   };
 
-  const openCheckout = (variant?: "sage" | "blush" | "classic") => {
+  const openCheckout = (variant?: CameraVariantId) => {
     if (variant) {
       setSelectedVariant(variant);
     }
@@ -115,8 +115,8 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const calculateTotal = () => {
     const variantObj = PRODUCT_VARIANTS.find((v) => v.id === selectedVariant);
-    let subtotalCZK = variantObj ? variantObj.priceCZK : 1290;
-    let subtotalEUR = variantObj ? variantObj.priceEUR : 49;
+    let subtotalCZK = variantObj ? variantObj.priceCZK : 1490;
+    let subtotalEUR = variantObj ? variantObj.priceEUR : 60;
 
     selectedAddOns.forEach((addonId) => {
       const addon = ADD_ONS.find((a) => a.id === addonId);
