@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { useShop } from "../context/ShopContext";
 import { CameraModel } from "./CameraModel";
 import { CAMERA_COLOR_OPTIONS } from "../data/products";
@@ -6,34 +6,58 @@ import { Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
 import { cameraSound } from "../lib/sound";
-import { useForm, ValidationError } from "@formspree/react";
 
 export const Hero: React.FC = () => {
   const { t, triggerFlash, selectedVariant, setSelectedVariant } = useShop();
-  const [state, handleSubmit] = useForm("mqpaljal");
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  useEffect(() => {
-    if (state.succeeded) {
-      cameraSound.playPlugIn();
-      try {
-        confetti({
-          particleCount: 90,
-          spread: 75,
-          origin: { y: 0.6 },
-          colors: ["#98A886", "#FF70A6", "#70EEFF", "#FFFFFF"],
-        });
-      } catch {
-        // ignore
-      }
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    setStatus("loading");
+    try {
+      const res = await fetch("https://formspree.io/f/mqpaljal", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          selectedVariant,
+          source: "Hero Waitlist Drop #1",
+        }),
+      });
 
-      if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
-        (window as any).gtag("event", "waitlist_signup", {
-          event_category: "Waitlist",
-          event_label: "Drop #1 Lead",
-        });
+      if (res.ok) {
+        setStatus("success");
+        cameraSound.playPlugIn();
+        triggerFlash();
+        try {
+          confetti({
+            particleCount: 90,
+            spread: 75,
+            origin: { y: 0.6 },
+            colors: ["#98A886", "#FF70A6", "#70EEFF", "#FFFFFF"],
+          });
+        } catch {
+          // ignore
+        }
+
+        if (typeof window !== "undefined" && (window as any).gtag) {
+          (window as any).gtag("event", "waitlist_signup", {
+            event_category: "Waitlist",
+            event_label: "Drop #1 Lead",
+          });
+        }
+      } else {
+        setStatus("error");
       }
+    } catch {
+      setStatus("error");
     }
-  }, [state.succeeded]);
+  };
 
   return (
     <section className="relative pt-12 pb-24 lg:pt-24 lg:pb-32 overflow-hidden transition-colors duration-300">
@@ -82,48 +106,45 @@ export const Hero: React.FC = () => {
               id="waitlist-box"
               className="mt-6 max-w-md w-full mx-auto lg:mx-0"
             >
-              {!state.succeeded ? (
+              {status !== "success" ? (
                 <form
                   id="hero-waitlist-form"
                   action="https://formspree.io/f/mqpaljal"
                   method="POST"
-                  onSubmit={handleSubmit}
+                  onSubmit={handleFormSubmit}
                   className="space-y-2"
                 >
-                  {/* Hidden field for selected variant color */}
-                  <input type="hidden" name="selectedVariant" value={selectedVariant} />
-                  <input type="hidden" name="source" value="Hero Waitlist Drop #1" />
-
                   <div className="flex flex-col sm:flex-row gap-2.5">
                     <input
                       type="email"
                       name="email"
                       id="waitlist-email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       placeholder="Zadej e-mail pro přednostní přístup..."
                       required
                       className="flex-1 px-5 py-3.5 rounded-full bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-[#98A886] transition-colors text-sm"
                     />
                     <button
                       type="submit"
-                      disabled={state.submitting}
+                      disabled={status === "loading"}
                       className="px-6 py-3.5 rounded-full bg-[#98A886] hover:bg-[#889876] text-black font-semibold text-sm transition-all whitespace-nowrap shadow-lg shadow-[#98A886]/20 cursor-pointer disabled:opacity-70 flex items-center justify-center space-x-1.5"
                     >
-                      <span>{state.submitting ? "Odesílám..." : "Získat Drop kód ✦"}</span>
+                      <span>{status === "loading" ? "Odesílám..." : "Získat Drop kód ✦"}</span>
                     </button>
                   </div>
 
-                  <ValidationError
-                    prefix="Email"
-                    field="email"
-                    errors={state.errors}
-                    className="text-xs text-rose-400 font-mono pl-4"
-                  />
+                  {status === "error" && (
+                    <div className="text-xs text-rose-400 font-mono pl-4 pt-1">
+                      Chyba při odesílání. Zkuste to prosím znovu.
+                    </div>
+                  )}
                 </form>
               ) : null}
 
               <div
                 id="waitlist-success"
-                className={`${state.succeeded ? "block" : "hidden"} mt-3 p-3.5 rounded-2xl bg-[#98A886]/10 border border-[#98A886]/30 text-[#98A886] text-sm font-medium text-center lg:text-left`}
+                className={`${status === "success" ? "block" : "hidden"} mt-3 p-3.5 rounded-2xl bg-[#98A886]/10 border border-[#98A886]/30 text-[#98A886] text-sm font-medium text-center lg:text-left`}
               >
                 ✓ Skvělé! Máš zarezervované místo v Dropu #1.
               </div>

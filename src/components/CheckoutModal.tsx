@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useShop } from "../context/ShopContext";
 import { PRODUCT_VARIANTS } from "../data/products";
 import { cameraSound } from "../lib/sound";
 import confetti from "canvas-confetti";
 import { X, Check, Bell, Sparkles, CheckCircle, ShieldCheck, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useForm, ValidationError } from "@formspree/react";
 
 export const CheckoutModal: React.FC = () => {
   const {
@@ -17,7 +16,7 @@ export const CheckoutModal: React.FC = () => {
     formatPrice,
   } = useShop();
 
-  const [state, handleSubmit] = useForm("mqpaljal");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [vipNumber, setVipNumber] = useState(348);
   const [formData, setFormData] = useState({
     name: "",
@@ -30,34 +29,62 @@ export const CheckoutModal: React.FC = () => {
 
   const priceFormatted = formatPrice(variantObj.priceCZK, variantObj.priceEUR);
 
-  useEffect(() => {
-    if (state.succeeded) {
-      cameraSound.playPlugIn();
-      const randomVip = Math.floor(250 + Math.random() * 500);
-      setVipNumber(randomVip);
-      try {
-        confetti({
-          particleCount: 120,
-          spread: 80,
-          origin: { y: 0.6 },
-          colors: ["#A2B997", "#FF70A6", "#70EEFF", "#FFFFFF"],
-        });
-      } catch {
-        // ignore
-      }
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.email) return;
+    setStatus("loading");
 
-      if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
-        (window as any).gtag("event", "purchase_intent", {
-          event_category: "Reservation",
-          event_label: `Drop #1 - ${variantObj.id}`,
-          value: variantObj.priceCZK,
-          currency: "CZK",
-        });
+    try {
+      const res = await fetch("https://formspree.io/f/mqpaljal", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          selectedVariant: variantObj.id,
+          price: priceFormatted,
+          source: "VIP Reservation Modal Drop #1",
+        }),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        cameraSound.playPlugIn();
+        const randomVip = Math.floor(250 + Math.random() * 500);
+        setVipNumber(randomVip);
+        try {
+          confetti({
+            particleCount: 120,
+            spread: 80,
+            origin: { y: 0.6 },
+            colors: ["#A2B997", "#FF70A6", "#70EEFF", "#FFFFFF"],
+          });
+        } catch {
+          // ignore
+        }
+
+        if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+          (window as any).gtag("event", "purchase_intent", {
+            event_category: "Reservation",
+            event_label: `Drop #1 - ${variantObj.id}`,
+            value: variantObj.priceCZK,
+            currency: "CZK",
+          });
+        }
+      } else {
+        setStatus("error");
       }
+    } catch {
+      setStatus("error");
     }
-  }, [state.succeeded, variantObj]);
+  };
 
   const handleClose = () => {
+    setStatus("idle");
     closeCheckout();
   };
 
@@ -98,7 +125,7 @@ export const CheckoutModal: React.FC = () => {
 
           {/* Modal Body */}
           <div className="p-6 sm:p-8 max-h-[80vh] overflow-y-auto space-y-6">
-            {state.succeeded ? (
+            {status === "success" ? (
               /* Success Confirmation Screen */
               <div className="text-center py-6 space-y-5 font-sans">
                 <div className="w-16 h-16 rounded-full bg-[#A2B997]/25 text-[#5A734F] dark:text-[#A2B997] mx-auto flex items-center justify-center border border-[#7B9370]/40 dark:border-[#A2B997]/40 shadow-sm dark:shadow-neon-sage">
@@ -228,7 +255,6 @@ export const CheckoutModal: React.FC = () => {
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/5 border border-black/15 dark:border-white/10 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:border-[#7B9370] dark:focus:border-[#A2B997]"
                     />
-                    <ValidationError prefix="Name" field="name" errors={state.errors} className="text-xs text-rose-400 font-mono mt-1" />
                   </div>
                   <div>
                     <input
@@ -240,7 +266,6 @@ export const CheckoutModal: React.FC = () => {
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/5 border border-black/15 dark:border-white/10 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:border-[#7B9370] dark:focus:border-[#A2B997]"
                     />
-                    <ValidationError prefix="Email" field="email" errors={state.errors} className="text-xs text-rose-400 font-mono mt-1" />
                   </div>
                   <div>
                     <input
@@ -252,18 +277,23 @@ export const CheckoutModal: React.FC = () => {
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/5 border border-black/15 dark:border-white/10 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:border-[#7B9370] dark:focus:border-[#A2B997]"
                     />
-                    <ValidationError prefix="Phone" field="phone" errors={state.errors} className="text-xs text-rose-400 font-mono mt-1" />
                   </div>
+
+                  {status === "error" && (
+                    <div className="text-xs text-rose-400 font-mono pl-1">
+                      Chyba při odesílání. Zkuste to prosím znovu.
+                    </div>
+                  )}
                 </div>
 
                 {/* CTA */}
                 <div className="pt-2 space-y-3">
                   <button
                     type="submit"
-                    disabled={state.submitting}
+                    disabled={status === "loading"}
                     className="w-full py-4 rounded-2xl bg-gradient-to-r from-[#A2B997] via-[#8FA885] to-[#FF70A6] text-black font-black text-sm sm:text-base shadow-md dark:shadow-neon-sage hover:brightness-110 active:scale-95 transition-all flex items-center justify-center space-x-2 cursor-pointer disabled:opacity-70"
                   >
-                    <span>{state.submitting ? "Odesílám..." : t.waitlist.submitBtn}</span>
+                    <span>{status === "loading" ? "Odesílám..." : t.waitlist.submitBtn}</span>
                     <ArrowRight className="w-5 h-5 text-black" />
                   </button>
 
