@@ -2,6 +2,7 @@
   "version": "5",
   "specifiers": {
     "jsr:@std/encoding@*": "1.0.11",
+    "npm:@formspree/react@3": "3.0.0_react@18.3.1_react-dom@18.3.1__react@18.3.1",
     "npm:@types/canvas-confetti@^1.9.0": "1.9.0",
     "npm:@types/react-dom@^18.3.5": "18.3.7_@types+react@18.3.31",
     "npm:@types/react@^18.3.18": "18.3.31",
@@ -280,6 +281,22 @@
       "os": ["win32"],
       "cpu": ["x64"]
     },
+    "@formspree/core@4.0.0": {
+      "integrity": "sha512-geNlUut5nME1Ztej5Pzx1BrlQ1fFIcJYIqmF+Vm0jaUbpZxjXvt7SDOGeQVkuxn80QJiIHlwBGGjSBFjPX/KDw==",
+      "dependencies": [
+        "@stripe/stripe-js"
+      ]
+    },
+    "@formspree/react@3.0.0_react@18.3.1_react-dom@18.3.1__react@18.3.1": {
+      "integrity": "sha512-8PufBZ4l13VmCp9xTGQXwyF6mZtYSecqgTlFuMo5Fbe4Q6zUk7PMU2uKOwIaytZyTyJgFVCvdbpQElPPBKYNLw==",
+      "dependencies": [
+        "@formspree/core",
+        "@stripe/react-stripe-js",
+        "@stripe/stripe-js",
+        "react",
+        "react-dom"
+      ]
+    },
     "@jridgewell/gen-mapping@0.3.13": {
       "integrity": "sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==",
       "dependencies": [
@@ -456,6 +473,18 @@
       "integrity": "sha512-/gDJaRs4gl0NPIwqCz+6PkpmhhjRAD2j6P4rSNHBzUkO3naEx2mIU0pRle1vUNRQ7mE/+8OOeXLTv/J56FKiQg==",
       "os": ["win32"],
       "cpu": ["x64"]
+    },
+    "@stripe/react-stripe-js@3.11.0_@stripe+stripe-js@5.10.0_react@18.3.1_react-dom@18.3.1__react@18.3.1": {
+      "integrity": "sha512-5L2Qsg68ELyDGdiQb6mnT4fgyl6V6GN4nJzGdKmVJ3CfbQFv1H157/LJTjJVyQGLN2bZ20cFYFMn2YwZ2TJElw==",
+      "dependencies": [
+        "@stripe/stripe-js",
+        "prop-types",
+        "react",
+        "react-dom"
+      ]
+    },
+    "@stripe/stripe-js@5.10.0": {
+      "integrity": "sha512-PTigkxMdMUP6B5ISS7jMqJAKhgrhZwjprDqR1eATtFfh0OpKVNp110xiH+goeVdrJ29/4LeZJR4FaHHWstsu0A=="
     },
     "@types/babel__core@7.20.5": {
       "integrity": "sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==",
@@ -915,6 +944,14 @@
         "source-map-js"
       ]
     },
+    "prop-types@15.8.1": {
+      "integrity": "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==",
+      "dependencies": [
+        "loose-envify",
+        "object-assign",
+        "react-is"
+      ]
+    },
     "queue-microtask@1.2.3": {
       "integrity": "sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A=="
     },
@@ -925,6 +962,9 @@
         "react",
         "scheduler"
       ]
+    },
+    "react-is@16.13.1": {
+      "integrity": "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
     },
     "react-refresh@0.17.0": {
       "integrity": "sha512-z6F7K9bV85EfseRCp2bzrpyQ0Gkw1uLoCel9XBVWPg/TjRj94SkJzUTGfOa4bs7iJvBWtQG0Wq7wnI0syw3EBQ=="
@@ -1125,6 +1165,7 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
+        "npm:@formspree/react@3",
         "npm:@types/canvas-confetti@^1.9.0",
         "npm:@types/react-dom@^18.3.5",
         "npm:@types/react@^18.3.18",
