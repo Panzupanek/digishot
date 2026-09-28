@@ -1,12 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import { useShop } from "../context/ShopContext";
 import { CameraModel } from "./CameraModel";
 import { CAMERA_COLOR_OPTIONS } from "../data/products";
-import { Zap, ArrowRight } from "lucide-react";
+import { Zap } from "lucide-react";
 import { motion } from "framer-motion";
+import confetti from "canvas-confetti";
+import { cameraSound } from "../lib/sound";
 
 export const Hero: React.FC = () => {
-  const { t, openCheckout, triggerFlash, selectedVariant, setSelectedVariant } = useShop();
+  const { t, triggerFlash, selectedVariant, setSelectedVariant } = useShop();
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleWaitlistSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!email) return;
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch("https://formspree.io/f/mqpaljal", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          source: "Hero Waitlist Drop #1",
+          selectedColor: selectedVariant,
+        }),
+      });
+
+      if (res.ok) {
+        setIsSubmitted(true);
+        cameraSound.playPlugIn();
+        try {
+          confetti({
+            particleCount: 80,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ["#98A886", "#FF70A6", "#70EEFF", "#FFFFFF"],
+          });
+        } catch {
+          // ignore
+        }
+
+        if (typeof (window as any).gtag === "function") {
+          (window as any).gtag("event", "waitlist_signup", {
+            event_category: "Waitlist",
+            event_label: "Drop #1 Lead",
+          });
+        }
+      } else {
+        alert("Chyba při odesílání. Zkuste to prosím znovu.");
+      }
+    } catch {
+      alert("Chyba spojení. Zkuste to prosím znovu.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section className="relative pt-12 pb-24 lg:pt-24 lg:pb-32 overflow-hidden transition-colors duration-300">
@@ -47,28 +101,60 @@ export const Hero: React.FC = () => {
               <span>{t.hero.stockPill}</span>
             </motion.div>
 
-            {/* CTA Buttons */}
+            {/* Formspree Interactive Waitlist Box */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.25 }}
-              className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5"
+              id="waitlist-box"
+              className="mt-6 max-w-md w-full mx-auto lg:mx-0"
             >
-              <button
-                onClick={() => openCheckout(selectedVariant)}
-                className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#98A886] hover:bg-[#889876] text-black font-extrabold text-xs sm:text-sm tracking-wider shadow-sm transition-all active:scale-95 flex items-center justify-center space-x-2.5 uppercase cursor-pointer"
-              >
-                <span>{t.hero.primaryCta}</span>
-                <ArrowRight className="w-4 h-4 text-black" />
-              </button>
+              {!isSubmitted ? (
+                <form
+                  id="hero-waitlist-form"
+                  action="https://formspree.io/f/mqpaljal"
+                  method="POST"
+                  onSubmit={handleWaitlistSubmit}
+                  className="flex flex-col sm:flex-row gap-2.5"
+                >
+                  <input
+                    type="email"
+                    name="email"
+                    id="waitlist-email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Zadej e-mail pro přednostní přístup..."
+                    required
+                    className="flex-1 px-5 py-3.5 rounded-full bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-[#98A886] transition-colors text-sm"
+                  />
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="px-6 py-3.5 rounded-full bg-[#98A886] hover:bg-[#889876] text-black font-semibold text-sm transition-all whitespace-nowrap shadow-lg shadow-[#98A886]/20 cursor-pointer disabled:opacity-70 flex items-center justify-center space-x-1.5"
+                  >
+                    <span>{isSubmitting ? "Odesílám..." : "Získat Drop kód ✦"}</span>
+                  </button>
+                </form>
+              ) : null}
 
-              <button
-                onClick={triggerFlash}
-                className="w-full sm:w-auto px-5 py-3 rounded-full text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white font-medium text-xs font-mono hover:bg-black/5 dark:hover:bg-white/5 transition-all flex items-center justify-center space-x-1.5 cursor-pointer"
+              <div
+                id="waitlist-success"
+                className={`${isSubmitted ? "block" : "hidden"} mt-3 p-3.5 rounded-2xl bg-[#98A886]/10 border border-[#98A886]/30 text-[#98A886] text-sm font-medium text-center lg:text-left`}
               >
-                <Zap className="w-3.5 h-3.5 text-[#5A734F] dark:text-[#A2B997]" />
-                <span>{t.hero.flashBtn}</span>
-              </button>
+                ✓ Skvělé! Máš zarezervované místo v Dropu #1.
+              </div>
+
+              {/* Secondary Flash Test Button */}
+              <div className="mt-3.5 flex items-center justify-center lg:justify-start">
+                <button
+                  type="button"
+                  onClick={triggerFlash}
+                  className="px-4 py-2 rounded-full text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white font-medium text-xs font-mono hover:bg-black/5 dark:hover:bg-white/5 transition-all flex items-center space-x-1.5 cursor-pointer"
+                >
+                  <Zap className="w-3.5 h-3.5 text-[#5A734F] dark:text-[#98A886]" />
+                  <span>{t.hero.flashBtn}</span>
+                </button>
+              </div>
             </motion.div>
           </div>
 

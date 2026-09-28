@@ -23,5 +23,62 @@
   <body class="bg-[#090A0E] text-slate-100 antialiased selection:bg-[#FF70A6] selection:text-black overflow-x-hidden min-h-screen">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Global dataLayer / gtag helper
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      // Formspree Waitlist AJAX Handler
+      document.addEventListener('DOMContentLoaded', function() {
+        const waitlistForm = document.getElementById('hero-waitlist-form');
+        const waitlistSuccess = document.getElementById('waitlist-success');
+        
+        if (waitlistForm) {
+          waitlistForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const emailInput = document.getElementById('waitlist-email');
+            const submitBtn = waitlistForm.querySelector('button[type="submit"]');
+            if (submitBtn) {
+              submitBtn.disabled = true;
+              submitBtn.innerText = 'Odesílám...';
+            }
+            
+            try {
+              const res = await fetch(waitlistForm.action, {
+                method: 'POST',
+                headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: emailInput ? emailInput.value : '' })
+              });
+              
+              if (res.ok) {
+                waitlistForm.classList.add('hidden');
+                if (waitlistSuccess) {
+                  waitlistSuccess.classList.remove('hidden');
+                }
+                
+                if (typeof gtag === 'function') {
+                  gtag('event', 'waitlist_signup', {
+                    'event_category': 'Waitlist',
+                    'event_label': 'Drop #1 Lead'
+                  });
+                }
+              } else {
+                alert('Chyba při odesílání. Zkuste to prosím znovu.');
+                if (submitBtn) {
+                  submitBtn.disabled = false;
+                  submitBtn.innerText = 'Získat Drop kód ✦';
+                }
+              }
+            } catch (err) {
+              alert('Chyba spojení. Zkuste to prosím znovu.');
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Získat Drop kód ✦';
+              }
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
