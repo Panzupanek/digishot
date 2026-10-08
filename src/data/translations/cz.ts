@@ -152,8 +152,8 @@ export const czTranslations: TranslationData = {
   },
   "gallery": {
     "sectionTag": "SHOT ON DIGISHOT",
-    "heading": "Reálné fotky. Nulový displej. Čistá nostalgie.",
-    "subheading": "Autentické momenty pořízené fotoaparátem DigiShot. Vyfoť moment naslepo a fotky si stáhni kabelem rovnou do telefonu.",
+    "heading": "Žádný displej. Žádné filtry. Čistá nostalgie.",
+    "subheading": "Reálné momenty pořízené přímo fotoaparátem DigiShot.",
     "filterAll": "Všechny",
     "filterFestival": "Festivaly & Ravy",
     "filterParty": "House Party",

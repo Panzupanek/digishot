@@ -152,8 +152,8 @@ export const deTranslations: TranslationData = {
   },
   "gallery": {
     "sectionTag": "SHOT ON DIGISHOT",
-    "heading": "Echte Fotos. Kein Display. Pure Nostalgie.",
-    "subheading": "Authentische Momente aufgenommen mit der DigiShot. Knipse blind durch die Nacht und lade die Fotos morgens direkt per Kabel aufs Smartphone.",
+    "heading": "Kein Display. Keine Filter. Pure Nostalgie.",
+    "subheading": "Echte Momente direkt aufgenommen mit der DigiShot.",
     "filterAll": "Alle Fotos",
     "filterFestival": "Festivals & Raves",
     "filterParty": "House-Partys",

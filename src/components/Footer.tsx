@@ -47,9 +47,7 @@ export const Footer: React.FC = () => {
               Explore
             </span>
             <ul className="space-y-2">
-              <li><a href="#features" className="hover:text-[#5A734F] dark:hover:text-[#A2B997] transition-colors">{t.nav.features}</a></li>
               <li><a href="#variants" className="hover:text-[#5A734F] dark:hover:text-[#A2B997] transition-colors">{t.nav.variants}</a></li>
-              <li><a href="#how-it-works" className="hover:text-[#0284c7] dark:hover:text-[#70EEFF] transition-colors">{t.nav.howItWorks}</a></li>
               <li><a href="#gallery" className="hover:text-[#e11d48] dark:hover:text-[#FF70A6] transition-colors">{t.nav.gallery}</a></li>
             </ul>
           </div>

@@ -53,9 +53,7 @@ export const Header: React.FC = () => {
 
           {/* Center: Clean Muted Sans-Serif Nav Links */}
           <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600 dark:text-slate-400">
-            <a href="#features" className="hover:text-gray-900 dark:hover:text-white transition-colors">{t.nav.features}</a>
             <a href="#variants" className="hover:text-gray-900 dark:hover:text-white transition-colors">{t.nav.variants}</a>
-            <a href="#how-it-works" className="hover:text-gray-900 dark:hover:text-white transition-colors">{t.nav.howItWorks}</a>
             <a href="#gallery" className="hover:text-gray-900 dark:hover:text-white transition-colors">{t.nav.gallery}</a>
           </nav>
 
@@ -103,25 +101,11 @@ export const Header: React.FC = () => {
 
               <div className="flex flex-col space-y-2.5 pt-2 border-t border-black/5 dark:border-white/10 text-xs">
                 <a
-                  href="#features"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="py-1 hover:text-slate-900 dark:hover:text-white"
-                >
-                  {t.nav.features}
-                </a>
-                <a
                   href="#variants"
                   onClick={() => setMobileMenuOpen(false)}
                   className="py-1 hover:text-slate-900 dark:hover:text-white"
                 >
                   {t.nav.variants}
-                </a>
-                <a
-                  href="#how-it-works"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="py-1 hover:text-slate-900 dark:hover:text-white"
-                >
-                  {t.nav.howItWorks}
                 </a>
                 <a
                   href="#gallery"

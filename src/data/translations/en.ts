@@ -152,8 +152,8 @@ export const enTranslations: TranslationData = {
   },
   "gallery": {
     "sectionTag": "SHOT ON DIGISHOT",
-    "heading": "Real photos. Zero screen. Pure nostalgia.",
-    "subheading": "Authentic moments captured on the DigiShot camera. Snap blindly all night and transfer directly to your phone via cable in the morning.",
+    "heading": "No display. No filters. Pure nostalgia.",
+    "subheading": "Real moments captured directly on the DigiShot camera.",
     "filterAll": "All Shots",
     "filterFestival": "Festival & Raves",
     "filterParty": "House Parties",

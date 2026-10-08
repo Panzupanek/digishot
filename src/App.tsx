@@ -3,9 +3,6 @@ import { ShopProvider } from "./context/ShopContext";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { ProductStudio } from "./components/ProductStudio";
-import { HowItWorks } from "./components/HowItWorks";
-import { ComparisonTable } from "./components/ComparisonTable";
-import { BeforeAfterSlider } from "./components/BeforeAfterSlider";
 import { Gallery } from "./components/Gallery";
 import { Footer } from "./components/Footer";
 import { CheckoutModal } from "./components/CheckoutModal";
@@ -21,9 +18,6 @@ export function App() {
         <main className="flex-grow">
           <Hero />
           <ProductStudio />
-          <HowItWorks />
-          <BeforeAfterSlider />
-          <ComparisonTable />
           <Gallery />
         </main>
         <Footer />
