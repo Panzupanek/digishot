@@ -17,19 +17,19 @@ export const BeforeAfterSlider: React.FC = () => {
     {
       id: "portrait",
       titleKey: "scene1",
-      image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&auto=format&fit=crop&q=85",
+      image: "/gallery/shot1.jpg",
       timestamp: "'26 08:26 02:45 AM",
     },
     {
       id: "festival",
       titleKey: "scene2",
-      image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&auto=format&fit=crop&q=85",
+      image: "/gallery/shot2.jpg",
       timestamp: "'26 08:26 01:18 AM",
     },
     {
       id: "afters",
       titleKey: "scene3",
-      image: "https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=1200&auto=format&fit=crop&q=85",
+      image: "/gallery/shot3.jpg",
       timestamp: "'26 08:26 04:32 AM",
     },
   ];

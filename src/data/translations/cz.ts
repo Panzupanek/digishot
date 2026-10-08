@@ -151,15 +151,15 @@ export const czTranslations: TranslationData = {
     ]
   },
   "gallery": {
-    "sectionTag": "NEFILTROVANÝ ARCHIV",
-    "heading": "Skutečné momenty. Skutečný noční vibe.",
-    "subheading": "Všechny tyto snímky byly vyfoceny foťákem DigiShot bez jakýchkoliv dodatečných úprav ve Photoshopu.",
+    "sectionTag": "SHOT ON DIGISHOT",
+    "heading": "Reálné fotky. Nulový displej. Čistá nostalgie.",
+    "subheading": "Autentické momenty pořízené fotoaparátem DigiShot. Vyfoť moment naslepo a fotky si stáhni kabelem rovnou do telefonu.",
     "filterAll": "Všechny",
     "filterFestival": "Festivaly & Ravy",
     "filterParty": "House Party",
     "filterAfters": "Afterparty 04:00+",
     "filterFlash": "Blesk & Portréty",
-    "hoverHint": "Najeď myší pro detail data a času"
+    "hoverHint": "Klikni pro zvětšení"
   },
   "testimonials": {
     "sectionTag": "CO ŘÍKAJÍ OSTATNÍ",

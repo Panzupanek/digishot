@@ -57,7 +57,6 @@ export const Header: React.FC = () => {
             <a href="#variants" className="hover:text-gray-900 dark:hover:text-white transition-colors">{t.nav.variants}</a>
             <a href="#how-it-works" className="hover:text-gray-900 dark:hover:text-white transition-colors">{t.nav.howItWorks}</a>
             <a href="#gallery" className="hover:text-gray-900 dark:hover:text-white transition-colors">{t.nav.gallery}</a>
-            <a href="#faq" className="hover:text-gray-900 dark:hover:text-white transition-colors">{t.nav.faq}</a>
           </nav>
 
           {/* Right: Unified Compact Control Cluster */}
@@ -130,13 +129,6 @@ export const Header: React.FC = () => {
                   className="py-1 hover:text-slate-900 dark:hover:text-white"
                 >
                   {t.nav.gallery}
-                </a>
-                <a
-                  href="#faq"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="py-1 hover:text-slate-900 dark:hover:text-white"
-                >
-                  {t.nav.faq}
                 </a>
               </div>
             </motion.div>

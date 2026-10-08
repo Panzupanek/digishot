@@ -151,15 +151,15 @@ export const deTranslations: TranslationData = {
     ]
   },
   "gallery": {
-    "sectionTag": "UNGEFILTERTES ARCHIV",
-    "heading": "Echte Momente. Echter Nacht-Vibe.",
-    "subheading": "Alle Fotos wurden mit der DigiShot ohne Photoshop-Bearbeitung aufgenommen.",
+    "sectionTag": "SHOT ON DIGISHOT",
+    "heading": "Echte Fotos. Kein Display. Pure Nostalgie.",
+    "subheading": "Authentische Momente aufgenommen mit der DigiShot. Knipse blind durch die Nacht und lade die Fotos morgens direkt per Kabel aufs Smartphone.",
     "filterAll": "Alle Fotos",
     "filterFestival": "Festivals & Raves",
     "filterParty": "House-Partys",
     "filterAfters": "Afterhour 04:00+",
     "filterFlash": "Blitz-Porträts",
-    "hoverHint": "Hover für Zeit- und Datumsstempel"
+    "hoverHint": "Klicken zum Vergrößern"
   },
   "testimonials": {
     "sectionTag": "COMMUNITY-STIMMEN",

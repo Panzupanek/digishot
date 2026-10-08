@@ -151,15 +151,15 @@ export const enTranslations: TranslationData = {
     ]
   },
   "gallery": {
-    "sectionTag": "UNFILTERED MOMENTS",
-    "heading": "Raw energy. Real night vibe.",
-    "subheading": "Every single shot was captured on a DigiShot camera with zero Photoshop touchups.",
+    "sectionTag": "SHOT ON DIGISHOT",
+    "heading": "Real photos. Zero screen. Pure nostalgia.",
+    "subheading": "Authentic moments captured on the DigiShot camera. Snap blindly all night and transfer directly to your phone via cable in the morning.",
     "filterAll": "All Shots",
     "filterFestival": "Festival & Raves",
     "filterParty": "House Parties",
     "filterAfters": "Afterhours 04:00+",
     "filterFlash": "Harsh Flash Portraits",
-    "hoverHint": "Hover to reveal time & location stamp"
+    "hoverHint": "Click to expand"
   },
   "testimonials": {
     "sectionTag": "COMMUNITY LOVE",
