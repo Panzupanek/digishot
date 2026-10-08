@@ -1,13 +1,27 @@
 import React, { useState } from 'react';
 import confetti from 'canvas-confetti';
 import { cameraSound } from '../lib/sound';
+import { useShop } from '../context/ShopContext';
+import { CameraVariantId } from '../data/products';
+
+const COLOR_OPTIONS: { id: CameraVariantId; name: string; label: string; dot: string }[] = [
+  { id: 'blush', name: 'DigiShot Blush', label: 'Blush', dot: '#FFB7C5' },
+  { id: 'white', name: 'DigiShot Retro White', label: 'Retro White', dot: '#E2E8F0' },
+  { id: 'brown', name: 'DigiShot Classic', label: 'Classic', dot: '#8D4F28' },
+  { id: 'purple', name: 'DigiShot Purple', label: 'Purple', dot: '#9333EA' },
+  { id: 'black', name: 'DigiShot Noir', label: 'Noir', dot: '#27272A' },
+];
 
 export const Hero: React.FC = () => {
+  const { selectedVariant, setSelectedVariant } = useShop();
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [copied, setCopied] = useState(false);
 
   const promoCode = "DROP20";
+
+  const currentVariant = COLOR_OPTIONS.find((c) => c.id === selectedVariant) || COLOR_OPTIONS[0];
+  const selectedColor = currentVariant.name;
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,7 +35,11 @@ export const Hero: React.FC = () => {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, discount_code: promoCode }),
+        body: JSON.stringify({
+          email: email,
+          preferred_color: selectedColor,
+          discount_code: promoCode,
+        }),
       });
 
       if (res.ok) {
@@ -40,7 +58,7 @@ export const Hero: React.FC = () => {
         if (typeof window !== 'undefined' && (window as any).gtag) {
           (window as any).gtag('event', 'waitlist_signup', {
             event_category: 'Waitlist',
-            event_label: 'Drop #1 Lead'
+            event_label: `Drop #1 - ${selectedColor}`
           });
         }
       } else {
@@ -77,8 +95,12 @@ export const Hero: React.FC = () => {
       <div className="max-w-md mx-auto">
         {status === 'success' ? (
           <div className="p-6 rounded-2xl bg-slate-50 dark:bg-zinc-900 border border-emerald-500/40 text-center animate-fade-in shadow-xl">
-            <p className="text-emerald-600 dark:text-emerald-400 font-bold mb-1">✓ Místo v Dropu #1 rezervováno!</p>
-            <p className="text-xs text-zinc-600 dark:text-zinc-400 mb-4">Kód ti byl také odeslán na e-mail.</p>
+            <p className="text-emerald-600 dark:text-emerald-400 font-bold mb-1">
+              ✓ Místo v Dropu #1 rezervováno pro edici: {selectedColor}
+            </p>
+            <p className="text-xs text-zinc-600 dark:text-zinc-400 mb-4">
+              Tvůj kód na 20% slevu: <strong>{promoCode}</strong> (zasláno také na e-mail)
+            </p>
             
             <div className="flex items-center justify-between bg-white dark:bg-black/60 border border-zinc-200 dark:border-zinc-700 rounded-xl p-3 px-4 shadow-sm">
               <span className="font-mono text-xl font-bold tracking-widest text-emerald-600 dark:text-emerald-400">{promoCode}</span>
@@ -93,22 +115,58 @@ export const Hero: React.FC = () => {
             <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-3">Platí na cenu 1 490 Kč / 60 € po spuštění dropu.</p>
           </div>
         ) : (
-          <form onSubmit={handleFormSubmit} className="flex flex-col sm:flex-row gap-2">
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Tvůj e-mail pro slevový kód..."
-              className="flex-1 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-xl px-4 py-3 text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-400 focus:ring-1 focus:ring-emerald-500 shadow-sm text-sm"
-            />
-            <button
-              type="submit"
-              disabled={status === 'loading'}
-              className="bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-6 py-3 rounded-xl transition whitespace-nowrap disabled:opacity-50 cursor-pointer text-sm shadow-md active:scale-95"
-            >
-              {status === 'loading' ? 'Odesílám...' : 'Získat kód (-20 %) ✦'}
-            </button>
+          <form onSubmit={handleFormSubmit} className="space-y-4">
+            {/* Color Selector Pills */}
+            <div className="text-center">
+              <span className="block text-xs font-semibold text-zinc-600 dark:text-zinc-400 mb-2">
+                Vyber si barvu pro rezervaci:
+              </span>
+              <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
+                {COLOR_OPTIONS.map((opt) => {
+                  const active = selectedVariant === opt.id;
+                  return (
+                    <button
+                      key={opt.id}
+                      type="button"
+                      onClick={() => {
+                        setSelectedVariant(opt.id);
+                        if (cameraSound?.playClick) cameraSound.playClick();
+                      }}
+                      className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all flex items-center gap-1.5 cursor-pointer border ${
+                        active
+                          ? "bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 border-transparent shadow-sm font-semibold scale-105 ring-2 ring-emerald-500/40"
+                          : "bg-white/80 dark:bg-zinc-900/80 text-zinc-700 dark:text-zinc-300 border-zinc-200 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-500"
+                      }`}
+                    >
+                      <span
+                        className="w-2.5 h-2.5 rounded-full border border-black/10 dark:border-white/20"
+                        style={{ backgroundColor: opt.dot }}
+                      />
+                      <span>{opt.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Email input and submit button */}
+            <div className="flex flex-col sm:flex-row gap-2">
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Tvůj e-mail pro slevový kód..."
+                className="flex-1 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-xl px-4 py-3 text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-400 focus:ring-1 focus:ring-emerald-500 shadow-sm text-sm"
+              />
+              <button
+                type="submit"
+                disabled={status === 'loading'}
+                className="bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-6 py-3 rounded-xl transition whitespace-nowrap disabled:opacity-50 cursor-pointer text-sm shadow-md active:scale-95"
+              >
+                {status === 'loading' ? 'Odesílám...' : 'Získat kód (-20 %) ✦'}
+              </button>
+            </div>
           </form>
         )}
         {status === 'error' && (
