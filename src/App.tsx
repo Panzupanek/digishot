@@ -7,7 +7,6 @@ import { HowItWorks } from "./components/HowItWorks";
 import { ComparisonTable } from "./components/ComparisonTable";
 import { BeforeAfterSlider } from "./components/BeforeAfterSlider";
 import { Gallery } from "./components/Gallery";
-import { Testimonials } from "./components/Testimonials";
 import { FAQ } from "./components/FAQ";
 import { Footer } from "./components/Footer";
 import { CheckoutModal } from "./components/CheckoutModal";
@@ -27,7 +26,6 @@ export function App() {
           <BeforeAfterSlider />
           <ComparisonTable />
           <Gallery />
-          <Testimonials />
           <FAQ />
         </main>
         <Footer />

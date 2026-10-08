@@ -12,14 +12,14 @@ export const deTranslations: TranslationData = {
     "cart": "Waitlist"
   },
   "announcement": {
-    "dropPrefix": "✦ DROP #1 STARTET IN 29 TAGEN — LIMITIERTE 100 STÜCK ✦",
+    "dropPrefix": "✦ DROP #1 IN VORBEREITUNG — LIMITIERTE 75 STÜCK ✦",
     "dropSuffix": "",
     "soldOutBadge": ""
   },
   "hero": {
-    "badge": "★ LIMITIERTER DROP #1 • NUR 100 STÜCK",
-    "stockPill": "⚡ DROP #1: LIMITIERTE EDITION 100 STK — 84 ÜBRIG",
-    "urgencyTag": "🔥 LETZTE BATCH INNERHALB VON 48 STUNDEN RESTLOS AUSVERKAUFT",
+    "badge": "★ DROP #1 IN VORBEREITUNG • LIMITIERTE 75 STÜCK",
+    "stockPill": "⚡ DROP #1: LIMITIERTE 75 STÜCK",
+    "urgencyTag": "🔥 VIP-VORABZUGANG FÜR DROP #1",
     "dropDateTitle": "COUNTDOWN ZUM NÄCHSTEN EXKLUSIVEN DROP:",
     "title": "Kein Display. Pure Party.",
     "titleHighlight": "",
@@ -30,16 +30,16 @@ export const deTranslations: TranslationData = {
     "flashHint": "Klicke für echte Kamerablitz-Simulation",
     "socialProof": "4.9/5 von über 1.850 Partygängern • 1.420+ auf dem VIP-Waitlist",
     "priceTag": "Drop-Preis: 60 €",
-    "soldOutNotice": "Aktuell alle Bestände ausverkauft. Sichere dir bevorzugten Vorabzugang zur limitierten 100-Stück-Serie."
+    "soldOutNotice": "Drop #1 in Vorbereitung — limitierte 75 Stück. Sichere dir deinen Vorabzugang."
   },
   "variants": {
     "sectionTag": "5 KULTIGE EDITIONEN",
     "heading": "Wähle deine Farbe für den nächsten Drop",
     "subheading": "Jede Farbvariante besitzt unseren unverwechselbaren Retro-CCD-Sensor, harten Blitz und sofortige USB-C Smartphone-Verbindung.",
     "selectColor": "Farbe wählen:",
-    "soldOutStatus": "STATUS: AUSVERKAUFT (0/100 Stück)",
-    "stockBadge": "AUSVERKAUFT • DROP IN 30 TAGEN",
-    "nextDropNotice": "Nächster Drop in 30 Tagen • Limitierte 100 Stück",
+    "soldOutStatus": "STATUS: DROP #1 IN VORBEREITUNG (75 Stk)",
+    "stockBadge": "LIMITIERTE 75 STÜCK",
+    "nextDropNotice": "Drop #1 in Vorbereitung • Limitierte 75 Stück",
     "reserveBtn": "Platz im Drop #1 sichern (-20% Rabatt)",
     "includedInBox": "Das ist in der Box:",
     "boxItems": [
@@ -222,7 +222,7 @@ export const deTranslations: TranslationData = {
   },
   "waitlist": {
     "modalTitle": "VIP Drop #1 Reservierung",
-    "modalSubtitle": "Die vorherige Serie von 100 Stück war in 48 Stunden ausverkauft. Sichere dir jetzt Vorabzugang und 20% VIP-Rabatt.",
+    "modalSubtitle": "Drop #1 in Vorbereitung — limitierte 75 Stück. Registriere dich für Vorabzugang und 20 % Rabatt.",
     "selectVariantTitle": "Wähle deine bevorzugte Drop-Edition:",
     "emailPlaceholder": "Deine E-Mail-Adresse (für VIP-Zugangslink)",
     "phonePlaceholder": "Telefonnummer (für SMS-Drop-Alarm)",

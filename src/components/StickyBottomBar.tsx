@@ -32,11 +32,11 @@ export const StickyBottomBar: React.FC = () => {
         {/* Status & Reserve CTA */}
         <div className="flex items-center space-x-3">
           <div className="text-right">
-            <span className="text-[9px] font-mono text-rose-600 dark:text-rose-400 font-bold block uppercase">
-              SOLD OUT (0/100)
+            <span className="text-[9px] font-mono text-emerald-600 dark:text-emerald-400 font-bold block uppercase">
+              LIMITOVANÁ SÉRIE
             </span>
             <span className="text-[11px] font-bold font-mono text-pink-600 dark:text-pink-400">
-              DROP IN 30 DAYS
+              75 KUSŮ
             </span>
           </div>
 

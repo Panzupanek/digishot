@@ -12,14 +12,14 @@ export const czTranslations: TranslationData = {
     "cart": "Waitlist"
   },
   "announcement": {
-    "dropPrefix": "✦ DROP #1 STARTUJE ZA 29 DNÍ — LIMITOVANÝCH 100 KS ✦",
+    "dropPrefix": "✦ DROP #1 SE PŘIPRAVUJE — LIMITOVANÁ SÉRIE 75 KUSŮ ✦",
     "dropSuffix": "",
     "soldOutBadge": ""
   },
   "hero": {
-    "badge": "★ LIMITOVANÝ DROP #1 • POUZE 100 KUSŮ",
-    "stockPill": "⚡ DROP #1: LIMITOVANÁ EDICE 100 KS — ZBÝVÁ 84 KS",
-    "urgencyTag": "🔥 PŘEDCHOZÍ BATCH VYPRODÁN BĚHEM 48 HODIN",
+    "badge": "★ DROP #1 SE PŘIPRAVUJE • LIMITOVANÁ SÉRIE 75 KUSŮ",
+    "stockPill": "⚡ DROP #1: LIMITOVANÁ SÉRIE 75 KUSŮ",
+    "urgencyTag": "🔥 PŘEDNOSTNÍ PŘÍSTUP PRO VIP WAITLIST",
     "dropDateTitle": "ODPOČET DO SPOUŠTĚNÍ DALŠÍHO DROPU:",
     "title": "Žádný displej. Čistá párty.",
     "titleHighlight": "",
@@ -30,16 +30,16 @@ export const czTranslations: TranslationData = {
     "flashHint": "Klikni pro simulaci autentického party blesku",
     "socialProof": "4.9/5 od 1 850+ party lovers • Již 1 420+ lidí na waitlistu",
     "priceTag": "Drop cena: 1 490 Kč",
-    "soldOutNotice": "Všechny skladové zásoby jsou momentálně rozebrány. Rezervuj si přednostní přístup k limitované sérii 100 kusů."
+    "soldOutNotice": "Drop #1 se připravuje — limitovaná série 75 kusů. Rezervuj si přednostní přístup."
   },
   "variants": {
     "sectionTag": "5 IKONICKÝCH EDIC",
     "heading": "Vyber si barvu pro nadcházející drop",
     "subheading": "Všechny varianty sdílejí legendární retro CCD senzor s drsným bleskem a okamžitým USB-C propojením s mobilem.",
     "selectColor": "Zvolit barvu:",
-    "soldOutStatus": "STATUS: VYPRODÁNO (0/100 ks skladem)",
-    "stockBadge": "VYPRODÁNO • DROP ZA 30 DNÍ",
-    "nextDropNotice": "Další drop za 30 dní • Limitovaná série 100 ks",
+    "soldOutStatus": "STATUS: PŘÍPRAVA DROPU #1 (75 ks)",
+    "stockBadge": "LIMITOVANÁ SÉRIE 75 KS",
+    "nextDropNotice": "Drop #1 se připravuje • Limitovaná série 75 kusů",
     "reserveBtn": "Zarezervovat v dropu #1 (sleva -20 %)",
     "includedInBox": "Co najdeš v balení:",
     "boxItems": [
@@ -222,7 +222,7 @@ export const czTranslations: TranslationData = {
   },
   "waitlist": {
     "modalTitle": "VIP Rezervace do Dropu #1",
-    "modalSubtitle": "Předchozí série 100 ks byla vyprodána za 48 hodin. Zaregistruj se a získej přednostní nákupní přístup a slevu 20 %.",
+    "modalSubtitle": "Drop #1 se připravuje — limitovaná série 75 kusů. Zaregistruj se a získej přednostní nákupní přístup a slevu 20 %.",
     "selectVariantTitle": "Vyber preferovanou edici pro drop:",
     "emailPlaceholder": "Tvůj e-mail (pro zaslání přednostního odkazu)",
     "phonePlaceholder": "Telefonní číslo (+420)",

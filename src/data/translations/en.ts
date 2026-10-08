@@ -12,14 +12,14 @@ export const enTranslations: TranslationData = {
     "cart": "Waitlist"
   },
   "announcement": {
-    "dropPrefix": "✦ DROP #1 LAUNCHES IN 29 DAYS — LIMITED 100 PIECES ✦",
+    "dropPrefix": "✦ DROP #1 IN PREPARATION — LIMITED 75 PIECES ✦",
     "dropSuffix": "",
     "soldOutBadge": ""
   },
   "hero": {
-    "badge": "★ LIMITED DROP #1 • ONLY 100 PIECES",
-    "stockPill": "⚡ DROP #1: LIMITED EDITION 100 PCS — 84 LEFT",
-    "urgencyTag": "🔥 PREVIOUS BATCH COMPLETELY SOLD OUT IN 48 HOURS",
+    "badge": "★ DROP #1 IN PREPARATION • LIMITED 75 PIECES",
+    "stockPill": "⚡ DROP #1: LIMITED 75 PIECES",
+    "urgencyTag": "🔥 VIP EARLY ACCESS FOR DROP #1",
     "dropDateTitle": "COUNTDOWN TO NEXT EXCLUSIVE DROP:",
     "title": "No screens. Pure party.",
     "titleHighlight": "",
@@ -30,16 +30,16 @@ export const enTranslations: TranslationData = {
     "flashHint": "Click to trigger authentic camera flash simulation",
     "socialProof": "4.9/5 from 1,850+ partygoers • 1,420+ already on VIP waitlist",
     "priceTag": "Drop Price: €60",
-    "soldOutNotice": "All current inventory is sold out. Reserve priority early access for our limited 100-unit batch."
+    "soldOutNotice": "Drop #1 in preparation — limited 75 pieces. Reserve your priority access."
   },
   "variants": {
     "sectionTag": "5 ICONIC EDITIONS",
     "heading": "Choose Your Color For Next Drop",
     "subheading": "Every colorway features our signature lo-fi CCD sensor, harsh flash diode, and instant USB-C phone connectivity.",
     "selectColor": "Select Color:",
-    "soldOutStatus": "STATUS: SOLD OUT (0/100 in stock)",
-    "stockBadge": "SOLD OUT • NEXT DROP IN 30 DAYS",
-    "nextDropNotice": "Next drop in 30 days • Limited 100 pieces",
+    "soldOutStatus": "STATUS: PREPARING DROP #1 (75 pcs)",
+    "stockBadge": "LIMITED 75 PIECES",
+    "nextDropNotice": "Drop #1 in preparation • Limited 75 pieces",
     "reserveBtn": "Reserve Spot in Drop #1 (-20% OFF)",
     "includedInBox": "What's in the box:",
     "boxItems": [
@@ -222,7 +222,7 @@ export const enTranslations: TranslationData = {
   },
   "waitlist": {
     "modalTitle": "VIP Drop #1 Reservation",
-    "modalSubtitle": "The previous 100-piece batch sold out in 48 hours. Secure priority access and get a 20% secret discount code.",
+    "modalSubtitle": "Drop #1 in preparation — limited 75 pieces. Register to get priority early access and 20% off.",
     "selectVariantTitle": "Choose your preferred drop edition:",
     "emailPlaceholder": "Your email (for priority access link)",
     "phonePlaceholder": "Phone number (for SMS drop alert)",
