@@ -44,11 +44,9 @@ export const czTranslations: TranslationData = {
     "includedInBox": "Co najdeš v balení:",
     "boxItems": [
       "DigiShot retro fotoaparát",
-      "MicroSD paměťová karta 16GB (na tisíce fotek)",
-      "Univerzální USB-C na USB-C / Lightning kabel",
-      "Nastavitelný Y2K řemínek na ruku",
-      "Balíček holografických retro samolepek",
-      "Rychlý návod v češtině & 2letá záruka"
+      "MicroSD paměťová karta 4 GB (až 1 500 fotek v balení)",
+      "USB-C kabel pro okamžitý přenos do mobilu i nabíjení",
+      "Nastavitelný řemínek na ruku"
     ],
     "blushName": "DigiShot Blush",
     "blushDesc": "Pastelově růžová & vanilkový krém. Vlajková loď a hit TikToku, perfektní k party outfitu a festivalovému třpytkovému líčení.",

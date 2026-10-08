@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
                 ⚡ USB-C Direct
               </span>
               <span className="px-2.5 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10">
-                🔒 2-Year Warranty
+                📸 Instant Phone Transfer
               </span>
             </div>
           </div>

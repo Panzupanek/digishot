@@ -183,16 +183,16 @@ export const ProductStudio: React.FC = () => {
             </div>
 
             {/* Included in Box Summary */}
-            <div className="p-4 rounded-2xl bg-black/[0.03] dark:bg-black/40 border border-black/10 dark:border-white/10 space-y-2">
+            <div className="p-4 sm:p-5 rounded-2xl bg-black/[0.03] dark:bg-black/40 border border-black/10 dark:border-white/10 space-y-2.5">
               <span className="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 flex items-center space-x-1.5">
                 <Package className="w-4 h-4 text-pink-600 dark:text-pink-400" />
                 <span>{t.variants.includedInBox}</span>
               </span>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-slate-600 dark:text-slate-400 font-mono">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700 dark:text-slate-300 font-mono">
                 {t.variants.boxItems.map((item, idx) => (
-                  <li key={idx} className="flex items-center space-x-1.5 truncate">
-                    <Check className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
-                    <span className="truncate">{item}</span>
+                  <li key={idx} className="flex items-start space-x-2 whitespace-normal break-words">
+                    <Check className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                    <span className="whitespace-normal break-words leading-snug">{item}</span>
                   </li>
                 ))}
               </ul>

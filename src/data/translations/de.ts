@@ -44,11 +44,9 @@ export const deTranslations: TranslationData = {
     "includedInBox": "Das ist in der Box:",
     "boxItems": [
       "DigiShot Retro Digitalkamera",
-      "16GB MicroSD Speicherkarte (tausende Fotos)",
-      "Universelles USB-C auf USB-C / Lightning Kabel",
-      "Verstellbare Y2K Handgelenkschlaufe",
-      "Holografisches Retro-Sticker-Set",
-      "Schnellstartanleitung & 2 Jahre Garantie"
+      "4GB MicroSD Speicherkarte (bis zu 1.500 Fotos inklusive)",
+      "USB-C Kabel für sofortige Smartphone-Übertragung & Laden",
+      "Verstellbare Handgelenkschlaufe"
     ],
     "blushName": "DigiShot Blush",
     "blushDesc": "Pastellrosa & Creme. Das Flaggschiff der Kollektion und TikTok-Hit, perfekt abgestimmt auf Party-Outfits und Glitzer-Make-up.",

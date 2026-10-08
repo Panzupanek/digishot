@@ -43,12 +43,10 @@ export const enTranslations: TranslationData = {
     "reserveBtn": "Reserve Spot in Drop #1 (-20% OFF)",
     "includedInBox": "What's in the box:",
     "boxItems": [
-      "DigiShot Retro Digital Camera",
-      "16GB MicroSD Memory Card (thousands of shots)",
-      "Universal USB-C to USB-C / Lightning Phone Cable",
-      "Adjustable Y2K Wrist Lanyard",
-      "Holographic Retro Sticker Pack",
-      "Quick Start Manual & 2-Year Warranty"
+      "DigiShot retro digital camera",
+      "4GB MicroSD memory card (up to 1,500 photos included)",
+      "USB-C cable for instant phone transfer and fast charging",
+      "Adjustable wrist lanyard"
     ],
     "blushName": "DigiShot Blush",
     "blushDesc": "Pastel Pink & Cream White. The flagship drop and TikTok favorite matching your party outfits, glitter makeup, and night fits.",
