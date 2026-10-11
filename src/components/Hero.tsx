@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
 
     setStatus('loading');
     try {
-      const res = await fetch('https://hook.eu1.make.com/3hojr13cwx7o8rc1l9tspxxiym1lksmv', {
+      const res = await fetch('https://formspree.io/f/mqpaljal', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -38,7 +38,7 @@ export const Hero: React.FC = () => {
         body: JSON.stringify({
           email: email,
           preferred_color: selectedColor,
-          discount_code: promoCode,
+          discount_code: 'DROP20',
         }),
       });
 

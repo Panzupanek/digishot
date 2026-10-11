@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en" class="dark">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q3JYTK9CNQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-Q3JYTK9CNQ');
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23121212'/><rect x='8' y='8' width='48' height='48' rx='12' stroke='%23FFFFFF' stroke-width='5' fill='none'/><circle cx='32' cy='32' r='14' stroke='%23FFFFFF' stroke-width='4.5' fill='none'/><circle cx='32' cy='32' r='8' fill='%23FFFFFF'/><path d='M46 46 C46 41 46 41 41 41 C46 41 46 41 46 36 C46 41 46 41 51 41 C46 41 46 41 46 46 Z' fill='%2398A886'/></svg>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,10 +53,10 @@
             }
             
             try {
-              const res = await fetch(waitlistForm.action, {
+              const res = await fetch(waitlistForm.action || 'https://formspree.io/f/mqpaljal', {
                 method: 'POST',
                 headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email: emailInput ? emailInput.value : '' })
+                body: JSON.stringify({ email: emailInput ? emailInput.value : '', discount_code: 'DROP20' })
               });
               
               if (res.ok) {
