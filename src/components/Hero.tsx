@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
 import { cameraSound } from '../lib/sound';
 import { useShop } from '../context/ShopContext';
 import { CameraVariantId } from '../data/products';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, Sparkles, Lock } from 'lucide-react';
 
 const COLOR_OPTIONS: { id: CameraVariantId; name: string; label: string; dot: string }[] = [
   { id: 'blush', name: 'DigiShot Blush', label: 'Blush', dot: '#FFB7C5' },
@@ -17,6 +19,15 @@ export const Hero: React.FC = () => {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [copied, setCopied] = useState(false);
+  const [showWelcome, setShowWelcome] = useState(true);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setShowWelcome(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const promoCode = "DROP20";
 
@@ -76,13 +87,187 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative pt-24 pb-16 px-4 text-center max-w-4xl mx-auto">
-      {/* Cenový odznak se slevou */}
-      <div className="inline-flex flex-wrap items-center justify-center gap-1 sm:gap-1.5 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-semibold uppercase tracking-wider mb-6">
-        <span className="text-emerald-700 dark:text-emerald-400 font-bold">⚡ DROP #1: SLEVA 20 % PRO WAITLIST</span>
-        <span className="line-through text-zinc-500 mx-1">1 890 Kč (75 €)</span>
-        <span className="font-bold text-emerald-600 dark:text-emerald-400">1 490 Kč (60 €)</span>
-      </div>
+    <>
+      {/* Uvítací vrstva (Welcome Modal / Overlay) pro okamžitou konverzi ihned po načtení */}
+      <AnimatePresence>
+        {showWelcome && (
+          <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 30 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="relative w-full max-w-lg bg-[#0C0D12] text-white border-t sm:border border-emerald-500/35 rounded-t-[2rem] sm:rounded-3xl p-6 sm:p-8 shadow-[0_0_60px_rgba(0,0,0,0.95),0_0_35px_rgba(16,185,129,0.2)] overflow-hidden my-0 sm:my-auto text-left max-h-[92vh] overflow-y-auto"
+            >
+              {/* Y2K Ambient Glow */}
+              <div className="pointer-events-none absolute -top-24 -right-24 w-52 h-52 bg-emerald-500/20 rounded-full blur-3xl" />
+              <div className="pointer-events-none absolute -bottom-24 -left-24 w-52 h-52 bg-pink-500/20 rounded-full blur-3xl" />
+
+              {/* Close Button X */}
+              <button
+                type="button"
+                onClick={() => setShowWelcome(false)}
+                className="absolute top-4 right-4 p-2 rounded-full text-zinc-400 hover:text-white bg-zinc-900/80 hover:bg-zinc-800 transition cursor-pointer border border-zinc-800 z-10"
+                aria-label="Zavřít"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {/* Mobile grab bar indicator */}
+              <div className="sm:hidden w-12 h-1.5 bg-zinc-800 rounded-full mx-auto mb-4" />
+
+              {/* Status Badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/40 text-[11px] font-mono text-emerald-400 font-bold uppercase tracking-wider mb-3">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                </span>
+                <span>⚡ LIVE WAITLIST • DROP #1</span>
+              </div>
+
+              {/* Main Headline */}
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-black tracking-tight text-white leading-snug mb-3">
+                Místa v Dropu #1 mizí <span className="text-emerald-400">(zbývá pár míst z 75)</span>. Získej foťák jako první s 20% slevou.
+              </h2>
+
+              {/* Price comparison strip */}
+              <div className="flex flex-wrap items-center gap-2 bg-zinc-900/90 border border-zinc-800 rounded-xl px-3.5 py-2.5 mb-4">
+                <span className="text-xs font-mono text-zinc-400">VIP cena:</span>
+                <span className="text-sm font-bold text-zinc-500 line-through">1 890 Kč (75 €)</span>
+                <span className="text-base font-black text-emerald-400">1 490 Kč (60 €)</span>
+                <span className="ml-auto text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  -20 % S KÓDEM DROP20
+                </span>
+              </div>
+
+              {status === 'success' ? (
+                <div className="p-5 rounded-2xl bg-zinc-900/90 border border-emerald-500/50 text-center animate-fade-in shadow-xl">
+                  <p className="text-emerald-400 font-extrabold text-base mb-1">
+                    ✓ Místo v Dropu #1 rezervováno pro edici: {selectedColor}
+                  </p>
+                  <p className="text-xs text-zinc-300 mb-3">
+                    Tvůj kód na 20% slevu: <strong>{promoCode}</strong>
+                  </p>
+                  <div className="flex items-center justify-between bg-black border border-zinc-700 rounded-xl p-3 px-4 mb-4">
+                    <span className="font-mono text-xl font-bold tracking-widest text-emerald-400">{promoCode}</span>
+                    <button
+                      type="button"
+                      onClick={copyCode}
+                      className="text-xs bg-zinc-800 hover:bg-zinc-700 text-white px-3 py-1.5 rounded-lg border border-zinc-600 transition cursor-pointer font-medium"
+                    >
+                      {copied ? '✓ Zkopírováno' : 'Kopírovat'}
+                    </button>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setShowWelcome(false)}
+                    className="w-full py-3.5 bg-emerald-400 hover:bg-emerald-300 text-black font-extrabold text-sm rounded-xl transition cursor-pointer shadow-lg"
+                  >
+                    Vstoupit na web a prohlédnout fotky ✦
+                  </button>
+                </div>
+              ) : (
+                <>
+                  {/* Color Selector Pills */}
+                  <div className="mb-4">
+                    <span className="block text-xs font-semibold text-zinc-400 mb-2">
+                      Vyber si barvu pro rezervaci:
+                    </span>
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                      {COLOR_OPTIONS.map((opt) => {
+                        const active = selectedVariant === opt.id;
+                        return (
+                          <button
+                            key={opt.id}
+                            type="button"
+                            onClick={() => {
+                              setSelectedVariant(opt.id);
+                              if (cameraSound?.playClick) cameraSound.playClick();
+                            }}
+                            className={`px-2.5 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 cursor-pointer border ${
+                              active
+                                ? "bg-white text-black border-transparent font-bold ring-2 ring-emerald-400 shadow-sm scale-105"
+                                : "bg-zinc-900/90 text-zinc-300 border-zinc-800 hover:border-zinc-700"
+                            }`}
+                          >
+                            <span
+                              className="w-2.5 h-2.5 rounded-full border border-black/20"
+                              style={{ backgroundColor: opt.dot }}
+                            />
+                            <span>{opt.label}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Form */}
+                  <form onSubmit={handleFormSubmit} className="space-y-3">
+                    <div>
+                      <input
+                        type="email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Tvůj e-mail pro 20% slevový kód..."
+                        className="w-full bg-zinc-950/90 border border-zinc-700 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 rounded-xl px-4 py-3.5 text-white placeholder-zinc-500 text-base focus:outline-none transition shadow-inner"
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={status === 'loading'}
+                      className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-emerald-400 via-emerald-300 to-teal-300 hover:from-emerald-300 hover:to-teal-200 text-black font-black text-base sm:text-lg uppercase tracking-wide shadow-[0_0_30px_rgba(52,211,153,0.45)] hover:shadow-[0_0_40px_rgba(52,211,153,0.65)] active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                    >
+                      {status === 'loading' ? (
+                        'Rezervuji místo...'
+                      ) : (
+                        <>
+                          <Sparkles className="w-5 h-5 fill-black" />
+                          <span>Zapsat na waitlist</span>
+                        </>
+                      )}
+                    </button>
+                  </form>
+                </>
+              )}
+
+              {status === 'error' && (
+                <p className="text-red-400 text-xs mt-2 font-medium">Něco se pokazilo, zkus to prosím znovu.</p>
+              )}
+
+              {/* Close secondary link */}
+              <div className="mt-4 text-center">
+                <button
+                  type="button"
+                  onClick={() => setShowWelcome(false)}
+                  className="text-xs text-zinc-500 hover:text-zinc-400 transition cursor-pointer underline underline-offset-4"
+                >
+                  Pokračovat na web bez rezervace →
+                </button>
+              </div>
+
+              {/* Reassurance */}
+              <div className="mt-3 flex items-center justify-center gap-1.5 text-[11px] text-zinc-500 font-mono">
+                <Lock className="w-3 h-3 text-zinc-500" />
+                <span>Bez spamu • Kód obdržíš ihned na obrazovce</span>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      <section className="relative pt-24 pb-16 px-4 text-center max-w-4xl mx-auto">
+        {/* Cenový odznak se slevou (kliknutím lze znovu otevřít uvítací okno) */}
+        <button
+          type="button"
+          onClick={() => setShowWelcome(true)}
+          className="inline-flex flex-wrap items-center justify-center gap-1 sm:gap-1.5 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-semibold uppercase tracking-wider mb-6 cursor-pointer hover:bg-emerald-500/20 transition-colors"
+        >
+          <span className="text-emerald-700 dark:text-emerald-400 font-bold">⚡ DROP #1: SLEVA 20 % PRO WAITLIST</span>
+          <span className="line-through text-zinc-500 mx-1">1 890 Kč (75 €)</span>
+          <span className="font-bold text-emerald-600 dark:text-emerald-400">1 490 Kč (60 €)</span>
+        </button>
 
       <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-zinc-950 dark:text-white mb-4">
         Žádný displej. Čistá párty.
@@ -174,5 +359,6 @@ export const Hero: React.FC = () => {
         )}
       </div>
     </section>
+  </>
   );
 };
