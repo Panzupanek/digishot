@@ -157,12 +157,12 @@ export const Hero: React.FC = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Tvůj e-mail pro slevový kód..."
-                className="flex-1 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-xl px-4 py-3 text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-400 focus:ring-1 focus:ring-emerald-500 shadow-sm text-sm"
+                className="flex-1 bg-white/70 dark:bg-zinc-900/60 backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-3 text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:border-[#A2B997] focus:ring-2 focus:ring-[#A2B997]/40 shadow-sm text-sm transition-all duration-200"
               />
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="group bg-[#A2B997] hover:bg-white text-zinc-950 font-bold px-6 py-3 rounded-xl shadow-[0_0_15px_rgba(162,185,151,0.5)] hover:shadow-[0_0_25px_rgba(162,185,151,0.8)] hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap disabled:opacity-50 cursor-pointer text-sm flex items-center justify-center gap-2"
+                className="group bg-[#A2B997] hover:bg-white text-gray-900 font-bold px-6 py-3 rounded-xl shadow-[0_0_20px_rgba(162,185,151,0.6)] hover:shadow-[0_0_30px_rgba(162,185,151,0.9)] hover:scale-105 active:scale-95 transition-all duration-300 ease-in-out whitespace-nowrap disabled:opacity-50 cursor-pointer text-sm flex items-center justify-center gap-2"
               >
                 {status === 'loading' ? (
                   'Odesílám...'
